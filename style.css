@@ -1389,7 +1389,7 @@ ul.sf-menu ul li a:hover, div.sf-menu ul ul li a:hover {
   width: 1500px;
   height: 100%;
   position: absolute;
-  left:0;
+  left:0; 
   top:0;
   z-index: 1;
   border-left: 4px solid white;
