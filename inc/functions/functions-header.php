@@ -241,7 +241,7 @@ function newspaper2017_logo_mobile() {
 add_filter('newspaper2017_logo_mobile','newspaper2017_logo_mobile');
 
 function newspaper2017_nav() {
-	if(class_exists('md_walker')) {
+	if(class_exists('md_walker__')) {
 		wp_nav_menu( array('theme_location'=>"primary",  'menu_class' => 'sf-menu', 'walker'	=> new md_walker, 'echo' => true, 'depth' => 3));
 	} else {
 		wp_nav_menu( array('theme_location'=>"primary",  'menu_class' => 'sf-menu', 'echo' => true, 'depth' => 3));
