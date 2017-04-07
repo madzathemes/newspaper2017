@@ -670,10 +670,10 @@ table {
   width: 728px;
 }
 .single-top {
-  padding-top: 10px;
+  padding-top: 4px;
 }
 .post-media-wrap {
-  padding-top: 10px;
+  padding-top: 4px;
 }
 .post-media-wrap .video-container {
   padding: 0px!important;
@@ -1884,7 +1884,7 @@ h2.heading::before {
   color: white !important;
 }
 .poster-large-cat {
-  margin: 10px 30px;
+  margin: 10px 20px;
 }
 .poster-large-cat span {
   position: relative;
@@ -1909,9 +1909,8 @@ h2.heading::before {
   line-height: 1.2;
 }
 .poster-large-content-in {
-  max-height: 189px;
+  height: 100%;
   overflow: hidden;
-  bottom: 25px;
   position: absolute;
   padding: 0px 10px;
   width: 100%;
@@ -1923,9 +1922,10 @@ h2.heading::before {
   opacity: 1;
 }
 .poster-large-link {
-  position: relative;
+  position: absolute;;
   margin: 10px 10px 0px;
   display: inline-block;
+  bottom: 25px;
 }
 .poster-large-link div {
   display: inline-block;
@@ -4405,7 +4405,7 @@ img.mfp-img {
     }
     .mt-slide-1-cat {
       color: white;
-      background: rgba(0, 0, 0, 0.5);
+      background: #ff0036;
       font-size: 11px;
       text-transform: uppercase;
       display: inline-block;
