@@ -38,7 +38,7 @@
 									<?php if(!empty($option['footer_logo'])) { ?>
 										<img src="<?php echo esc_url($footer_logo); ?>" srcset="<?php echo esc_url($footer_logo); ?> 1x, <?php echo esc_url($footer_logo2); ?> 2x"  alt="<?php echo the_title(); ?>"  />
 									<?php } else { ?>
-										<img src="<?php echo get_template_directory_uri(); ?>/inc/img/logo-footer.png" alt="<?php echo the_title(); ?>" />
+										<img src="<?php echo get_template_directory_uri(); ?>/inc/img/logo.png" alt="<?php echo the_title(); ?>" />
 									<?php } ?>
 								</div>
 								<div class="col-md-4 footer-about">

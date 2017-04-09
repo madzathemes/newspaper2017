@@ -3069,7 +3069,6 @@ background-color: rgba(0,0,0,.6);
 
 /* FOOTER */
 .footer {
-  background: #24272c;
   z-index: 9999;
   position: relative;
 }
@@ -3082,7 +3081,7 @@ background-color: rgba(0,0,0,.6);
   display: inline-block;
 }
 .footer-top h2 {
-  color: white;
+  color: #222;
   font-size: 14px;
   text-transform: uppercase;
   font-weight: 900;
