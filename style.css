@@ -2345,8 +2345,8 @@ background-color: rgba(0,0,0,.6);
 .grid-post .poster-cat span {
   background: #ff0036;
   color: white;
-  font-size: 12px;
-  padding: 3px 9px;
+  font-size: 11px;
+  padding: 3px 6px;
 }
 .grid-post.style-1.nr-3 .post-info,
 .grid-post.style-1.nr-4 .post-info {
