@@ -3165,8 +3165,8 @@ background-color: rgba(0,0,0,.6);
 }
 .footer-scroll-to-top {
     padding: 11px 0px 0px;
-    width: 45px;
-    height: 45px;
+    width: 65px;
+    height: 55px;
     text-align: center;
     background: #ff0036;
     font-weight: bold;
@@ -4768,6 +4768,7 @@ img.mfp-img {
 }
 
 
+
 /* New Fix */
 .mt-megamenu-img {
     height: 150px;
@@ -4778,4 +4779,7 @@ img.mfp-img {
 .poster-content-wrap .poster-data,
 .mega-post-in .poster-cat {
   display: none !important;
+}
+.mt-pl-a {
+  color: #9c9c9c;
 }
