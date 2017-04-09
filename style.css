@@ -1725,6 +1725,7 @@ h2.heading::before {
 .poster p {
   padding: 10px 0px 10px;
   font-size: 14px !important;
+  color: darkgrey;
 }
 .poster i.open {
   color: white;
