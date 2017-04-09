@@ -2338,7 +2338,7 @@ background-color: rgba(0,0,0,.6);
 .grid-post .poster-cat {
   position: absolute;
   z-index: 9;
-  top: -10px;
+  top: -5px;
 }
 .grid-post .post-info {
   padding-bottom: 10px;
