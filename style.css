@@ -2410,7 +2410,7 @@ background-color: rgba(0,0,0,.6);
   width: 100%;
 }
 .single-media-title h1 {
-  color: white;
+  color: black;
   font-weight: 700;
 }
 .single-media-title .single-cat-wrap .post-categories li a {
@@ -2420,22 +2420,22 @@ background-color: rgba(0,0,0,.6);
   background: rgb(27, 27, 27);
 }
 .single-media-title .color-silver-light {
-  color: white;
+  color: black;
 }
 .single-image-gradient:before {
     bottom: 0;
     content: "";
     display: block;
-    height: 50%;
+    height: 60%;
     width: 100%;
     position: absolute;
     z-index: 1;
-    background: -moz-linear-gradient(top,rgba(0,0,0,0) 0%,rgba(0,0,0,.8) 100%);
-    background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,rgba(0,0,0,0)),color-stop(100%,rgba(0,0,0,.8)));
-    background: -webkit-linear-gradient(top,rgba(0,0,0,0) 0%,rgba(0,0,0,.8) 100%);
-    background: -o-linear-gradient(top,rgba(0,0,0,0) 0%,rgba(0,0,0,.8) 100%);
-    background: -ms-linear-gradient(top,rgba(0,0,0,0) 0%,rgba(0,0,0,.8) 100%);
-    background: linear-gradient(to bottom,rgba(0,0,0,0) 0%,rgba(0,0,0,.8) 100%);
+    background: -moz-linear-gradient(top,rgba(0,0,0,0) 0%,rgba(255, 255, 255) 100%);
+    background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,rgba(0,0,0,0)),color-stop(100%,rgba(255, 255, 255)));
+    background: -webkit-linear-gradient(top,rgba(0,0,0,0) 0%,rgba(255, 255, 255) 100%);
+    background: -o-linear-gradient(top,rgba(0,0,0,0) 0%,rgba(255, 255, 255) 100%);
+    background: -ms-linear-gradient(top,rgba(0,0,0,0) 0%,rgba(255, 255, 255) 100%);
+    background: linear-gradient(to bottom,rgba(0,0,0,0) 0%,rgba(255, 255, 255) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#b3000000', GradientType=0);
 }
 .comment-reply-title {
@@ -2744,7 +2744,7 @@ background-color: rgba(0,0,0,.6);
   font-size: 12px;
 }
 .single-media-title .author-info a {
-  color: white !important;
+  color: black !important;
 }
 .boxed-layout-on .mt-content-container .row .col-md-12 > div,
 .boxed-layout-on .footer-wrap .container > div {
