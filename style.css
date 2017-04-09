@@ -3112,7 +3112,7 @@ background-color: rgba(0,0,0,.6);
   font-size: 13px;
 }
 .footer-bottom a:hover {
-  color: white;
+  color: #111;
 }
 .footer .social {
   list-style: none;
@@ -3127,8 +3127,8 @@ background-color: rgba(0,0,0,.6);
   display: inline-block;
   width: 30px;
   height: 30px;
-  background: white;
-  color: black;
+  background: black;
+  color: white;
   padding: 7px 0px;
   text-align: center;
 }
