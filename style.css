@@ -1717,6 +1717,9 @@ h2.heading::before {
 .poster-data:first-child i {
   padding-left: 0px;
 }
+.poster.size-normal.size-350 {
+  display: none;
+}
 .poster h2 {
   padding: 10px 0px 10px;
   font-size: 21px;
