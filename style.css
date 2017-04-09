@@ -2380,6 +2380,7 @@ background-color: rgba(0,0,0,.6);
 }
 .single-content p {
     color: #1b1c2a;
+    letter-spacing: 0.67px;
 }
 .post-style-8 .single-media-top {
   height: 600px;
