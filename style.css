@@ -1639,7 +1639,7 @@ h2.heading::before {
   overflow: hidden;
 }
 .poster.normal {
-  margin-bottom: 0px;
+  margin-bottom: 4px;
 }
 .lazy-hidden {
     opacity: 0;
