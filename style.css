@@ -3127,7 +3127,7 @@ background-color: rgba(0,0,0,.6);
   display: inline-block;
   width: 30px;
   height: 30px;
-  background: black;
+  background: #222;
   color: white;
   padding: 7px 0px;
   text-align: center;
@@ -3172,26 +3172,13 @@ background-color: rgba(0,0,0,.6);
     color: #fff;
     float:right;
 }
-.footer-scroll-to-top-link:before,
 .footer-scroll-to-top:before {
   content: "\6a";
   font-size: 12px;
   font-family: "madza";
   color: white!important;
 }
-.footer-scroll-to-top-link {
-  padding: 11px 0px 0px;
-  width: 45px;
-  height: 45px;
-  text-align: center;
-  background: #ff0036;
-  font-weight: bold;
-  color: #fff;
-  right: 20px;
-  bottom: 0px;
-  position: absolute;
-  display: inline-block;
-}
+
 .arrow {
   border-bottom: 0px solid #ff0036;
 }
