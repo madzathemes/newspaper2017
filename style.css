@@ -1387,7 +1387,6 @@ ul.sf-menu ul li a:hover, div.sf-menu ul ul li a:hover {
 }
 .nav-random a:after{
   content: "";
-  background: #ff0036;
   width: 1500px;
   height: 100%;
   position: absolute;
