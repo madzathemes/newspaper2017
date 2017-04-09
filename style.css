@@ -2807,11 +2807,11 @@ background-color: rgba(0,0,0,.6);
 .single-share .video-wrap {
   padding-right: 0px !important;
 }
-.single-content h2,
-.single-content h3,
-.single-content h4,
-.single-content h5,
-.single-content h6 {
+.single-content .entry-content h2,
+.single-content .entry-content h3,
+.single-content .entry-content h4,
+.single-content .entry-content h5,
+.single-content .entry-content h6 {
   margin-left: 40px;
 }
 .single-share-socials {
