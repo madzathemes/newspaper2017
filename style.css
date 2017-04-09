@@ -1775,6 +1775,7 @@ h2.heading::before {
   margin-top: 3px;
   font-size: 12px;
   margin-left: -15px;
+  color: #ff0036;
 }
 .poster-views {
   padding: 0px 7px 0px 13px;
@@ -1786,6 +1787,7 @@ h2.heading::before {
   margin-top: 2px;
   font-size: 14px;
   margin-left: -13px;
+  color: #ff0036;
 }
 .poster-comments {
   padding: 0px 0px 0px 15px;
@@ -1797,6 +1799,7 @@ h2.heading::before {
   margin-top: 1px;
   font-size: 13px;
   margin-left: -15px;
+  color: #ff0036;
 }
 .poster.img-empty .poster-info {
   position: relative;
