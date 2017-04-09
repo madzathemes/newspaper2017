@@ -2264,13 +2264,12 @@ background-color: rgba(0,0,0,.6);
 }
 .grid-post.nr-2.style-1 {
   width: 50%;
-  height: 275px;
-  margin-left: 10px;
+  height: 280px;
 }
 .grid-post.style-1.nr-3,
 .grid-post.style-1.nr-4 {
-  width: 275px;
-  height: 275px;
+  width: 25%;
+  height: 280px;
   margin-left: 10px;
   margin-top: 10px;
 }
