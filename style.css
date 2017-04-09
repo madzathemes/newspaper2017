@@ -2381,6 +2381,7 @@ background-color: rgba(0,0,0,.6);
 .single-content p {
     color: #1b1c2a;
     letter-spacing: 0.67px;
+    padding-left: 40px;
 }
 .post-style-8 .single-media-top {
   height: 600px;
@@ -2801,9 +2802,17 @@ background-color: rgba(0,0,0,.6);
 }
 .single-share p {
   padding-right: 0px !important;
+  padding-left: 0px !important;
 }
 .single-share .video-wrap {
   padding-right: 0px !important;
+}
+.single-share h2,
+.single-share h3,
+.single-share h4,
+.single-share h5,
+.single-share h6 {
+  margin-left: 40px;
 }
 .single-share-socials {
   text-align: center;
