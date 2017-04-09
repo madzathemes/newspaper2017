@@ -1563,7 +1563,7 @@ h2.heading::before {
   border-right: 1px solid rgba(255, 255, 255, 0.3);
 }
 .social-subscribe {
-  background: #ff0036;
+  background: #bebfc5;
 }
 .social-subscribe:before {
   content: "\69";
