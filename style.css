@@ -2824,7 +2824,8 @@ background-color: rgba(0,0,0,.6);
   width: 45px;
   height: 45px;
   padding: 15px 0px 15px;
-  background: #b8b8b8;
+  background: #fff;
+  color: black;
 }
 .single-share .single-share-socials div:before {
   display: none;
