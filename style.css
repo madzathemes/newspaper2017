@@ -2253,17 +2253,17 @@ background-color: rgba(0,0,0,.6);
   position: relative;
 }
 .grid-post {
-  width: 560px;
+  width: 50%;
   height: 560px;
 }
 .grid-post.style-3 {
-  width: 370px;
+  width: 33.33%;
 }
 .grid-post.style-3.nr-2 {
-  margin: 0px 10px;
+  margin: 0px 0px;
 }
 .grid-post.nr-2.style-1 {
-  width: 560px;
+  width: 50%;
   height: 275px;
   margin-left: 10px;
 }
@@ -2366,7 +2366,7 @@ background-color: rgba(0,0,0,.6);
     padding: 0px 20px 5px 20px;
 }
 .grid-post.style-2.nr-2 {
-  margin-left: 10px;
+  margin-left: 0px;
 }
 
 
