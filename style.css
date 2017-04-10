@@ -4475,14 +4475,14 @@ img.mfp-img {
     }
     .mt-cool-slider .mt-slide-1-img-left .mt-slide-wrap,
     .mt-cool-slider .mt-slide-1-img-right .mt-slide-wrap {
-      height: 290px;
+      height: 370px;
       position: relative;
     }
     .mt-cool-slider .mt-slide-1-img-left,
     .mt-cool-slider .mt-slide-1-img-right {
-      width: 360px;
-      height: 290px;
-      top: 40px;
+      width: 480px;
+      height: 370px;
+      top: 0px;
       position: absolute;
       z-index: 1;
       overflow: hidden;
@@ -4505,11 +4505,11 @@ img.mfp-img {
       opacity: 1;
     }
     .mt-cool-slider .mt-slide-1-img-left {
-      left: -360px;
+      left: -480px;
       display: none
     }
     .mt-cool-slider .mt-slide-1-img-right {
-      right: -360px;
+      right: -480px;
       display: none
     }
     .mt-cool-slider-carousel,
