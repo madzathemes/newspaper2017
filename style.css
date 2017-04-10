@@ -4480,7 +4480,7 @@ img.mfp-img {
     }
     .mt-cool-slider .mt-slide-1-img-left,
     .mt-cool-slider .mt-slide-1-img-right {
-      width: 120px;
+      width: 360px;
       height: 290px;
       top: 40px;
       position: absolute;
@@ -4505,11 +4505,11 @@ img.mfp-img {
       opacity: 1;
     }
     .mt-cool-slider .mt-slide-1-img-left {
-      left: -120px;
+      left: -360px;
       display: none
     }
     .mt-cool-slider .mt-slide-1-img-right {
-      right: -120px;
+      right: -360px;
       display: none
     }
     .mt-cool-slider-carousel,
