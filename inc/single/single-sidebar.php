@@ -14,25 +14,26 @@
       </div>
     <?php } ?>
 
-
-    <h2 class="heading"><span><?php echo esc_html__('Our Picks', 'newspaper2017'); ?></span></h2>
-    <?php echo do_shortcode('[posts type=normal offset="3" item_nr=3]') ?>
-    <?php if  (!empty($optionz['sidebar_ad_middle'])) {  ?>
-      <div class="advertise text-center">
-        <?php echo html_entity_decode($optionz['sidebar_ad_middle']); ?>
-      </div>
+    <?php if ( shortcode_exists( 'posts_trending' ) ) { ?>
+      <h2 class="heading"><span><?php echo esc_html__('Our Picks', 'newspaper2017'); ?></span></h2>
+      <?php echo do_shortcode('[posts type=normal offset="3" item_nr=3]') ?>
+      <?php if  (!empty($optionz['sidebar_ad_middle'])) {  ?>
+        <div class="advertise text-center">
+          <?php echo html_entity_decode($optionz['sidebar_ad_middle']); ?>
+        </div>
+      <?php } ?>
     <?php } ?>
 
-
-    <h2 class="heading"><span><?php esc_html_e('Most Popular', 'newspaper2017'); ?></span></h2>
-    <?php echo do_shortcode('[posts type=small item_nr=5]') ?>
-    <div class="space-20"></div>
-    <?php echo do_shortcode('[subscribe]') ?>
-    <?php if  (!empty($optionz['sidebar_ad_bottom'])) {  ?>
-      <div class="advertise text-center">
-        <?php echo html_entity_decode($optionz['sidebar_ad_bottom']); ?>
-      </div>
+    <?php if ( shortcode_exists( 'posts_trending' ) ) { ?>
+      <h2 class="heading"><span><?php esc_html_e('Most Popular', 'newspaper2017'); ?></span></h2>
+      <?php echo do_shortcode('[posts type=small item_nr=5]') ?>
+      <div class="space-20"></div>
+      <?php echo do_shortcode('[subscribe]') ?>
+      <?php if  (!empty($optionz['sidebar_ad_bottom'])) {  ?>
+        <div class="advertise text-center">
+          <?php echo html_entity_decode($optionz['sidebar_ad_bottom']); ?>
+        </div>
+      <?php } ?>
     <?php } ?>
-
   <?php } ?>
 <?php } ?>

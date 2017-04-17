@@ -85,7 +85,7 @@ $url = wp_get_attachment_url( get_post_thumbnail_id(get_the_ID()));
 
   } else {
 
-     echo do_shortcode('[posts title="'. esc_html__( 'You may be interested','newspaper2017' ) .'" title_type="left" type=normal-right item_nr=3 ]');
+     if ( shortcode_exists( 'posts_trending' ) ) { echo do_shortcode('[posts title="'. esc_html__( 'You may be interested','newspaper2017' ) .'" title_type="left" type=normal-right item_nr=3 ]'); }
 
   }
 
@@ -97,7 +97,7 @@ $url = wp_get_attachment_url( get_post_thumbnail_id(get_the_ID()));
 
   } else {
 
-    echo do_shortcode('[posts title="'. esc_html__( 'Most from this category','newspaper2017' ) .'" title_type="left" type=normal-two item_nr=4 offset=3]');
+    if ( shortcode_exists( 'posts_trending' ) ) { echo do_shortcode('[posts title="'. esc_html__( 'Most from this category','newspaper2017' ) .'" title_type="left" type=normal-two item_nr=4 offset=3]'); }
 
    }
 

@@ -3,23 +3,6 @@ function newspaper2017_header_script() {
 
 		wp_enqueue_style('newspaper2017', get_stylesheet_uri());
 
-		$option = get_option("newspaper2017_theme_options");
-		if  (!empty($option['menu_top_ad'])) {
-			 if  ($option['menu_top_ad']!="ad") {
-				 if  (!empty($option['weather_type'])) {
-		 			 if  ($option['weather_type']=="f") {
-						 wp_enqueue_script('newspaper2017-timeweather', get_template_directory_uri() . '/inc/js/timeweather_f.js', array('jquery'), '1.0', true);
-					 } else { wp_enqueue_script('newspaper2017-timeweather', get_template_directory_uri() . '/inc/js/timeweather_c.js', array('jquery'), '1.0', true); }
-				 } else { wp_enqueue_script('newspaper2017-timeweather', get_template_directory_uri() . '/inc/js/timeweather_c.js', array('jquery'), '1.0', true); }
-			 }
-		} else {
-			if  (!empty($option['weather_type'])) {
-				if  ($option['weather_type']=="f") {
-					wp_enqueue_script('newspaper2017-timeweather', get_template_directory_uri() . '/inc/js/timeweather_f.js', array('jquery'), '1.0', true);
-				} else { wp_enqueue_script('newspaper2017-timeweather', get_template_directory_uri() . '/inc/js/timeweather_c.js', array('jquery'), '1.0', true); }
-			} else { wp_enqueue_script('newspaper2017-timeweather', get_template_directory_uri() . '/inc/js/timeweather_c.js', array('jquery'), '1.0', true); }
-		}
-
 		wp_enqueue_script('newspaper2017_html5shiv', get_template_directory_uri() . '/inc/js/html5shiv.js', array('jquery'), '1.0', true);
 		wp_script_add_data( 'newspaper2017_html5shiv', 'conditional', 'lt IE 9' );
 		wp_enqueue_script('newspaper2017_respondmin', get_template_directory_uri() . '/inc/js/respond.js', array('jquery'), '1.0', true);

@@ -2385,9 +2385,10 @@ background-color: rgba(0,0,0,.6);
   position:absolute;
   left:0;
   right:0;
-  height: 700px;
+  height: 600px;
   background-size: cover;
   background-position: center;
+  overflow: hidden;
 }
 .single-media-top img {
   width: 100%;
