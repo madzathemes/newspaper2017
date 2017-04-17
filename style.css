@@ -1652,14 +1652,6 @@ h2.heading::before {
     transition: opacity 0.1s;
     opacity: 1!important;
 }
-.lazyload,
-.lazyloading {
-    opacity: 0;
-}
-.lazyloaded {
-    opacity: 1;
-    transition: opacity 300ms;
-}
 .poster.size-350 .poster-image {
   width: 100%;
   height: 233px;
