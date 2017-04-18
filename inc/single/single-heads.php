@@ -42,11 +42,11 @@ $url = wp_get_attachment_url( get_post_thumbnail_id(get_the_ID()));
         <small class="color-silver-light"><?php the_date('M d, Y'); ?></small>
       </div>
     </div>
-    <?php if ( false == get_theme_mod( 't_p_shares', false ) ) { $t_p_shares = esc_html__("Shares", "techpro");  } else { $t_p_shares = get_theme_mod( 't_p_shares' ); } ?>
-    <?php if ( false == get_theme_mod( 't_p_views', false ) ) { $t_p_views = esc_html__("Views", "techpro");  } else { $t_p_views = get_theme_mod( 't_p_views' ); } ?>
-    <?php if ( false == get_theme_mod( 't_p_share_on_facebook', false ) ) { $t_p_share_on_facebook = esc_html__("Share on Facebook", "techpro");  } else { $t_p_share_on_facebook = get_theme_mod( 't_p_share_on_facebook' ); } ?>
-    <?php if ( false == get_theme_mod( 't_p_share_on_twitter', false ) ) { $t_p_share_on_twitter = esc_html__("Tweet on Twitter", "techpro");  } else { $t_p_share_on_twitter = get_theme_mod( 't_p_share_on_twitter' ); } ?>
-    <?php if ( false == get_theme_mod( 't_c_comments', false ) ) { $t_c_comments = esc_html__("Comments", "techpro");  } else { $t_c_comments = get_theme_mod( 't_c_comments' ); } ?>
+    <?php if ( false == get_theme_mod( 't_p_shares', false ) ) { $t_p_shares = esc_html__("Shares", "newspaper2017");  } else { $t_p_shares = get_theme_mod( 't_p_shares' ); } ?>
+    <?php if ( false == get_theme_mod( 't_p_views', false ) ) { $t_p_views = esc_html__("Views", "newspaper2017");  } else { $t_p_views = get_theme_mod( 't_p_views' ); } ?>
+    <?php if ( false == get_theme_mod( 't_p_share_on_facebook', false ) ) { $t_p_share_on_facebook = esc_html__("Share on Facebook", "newspaper2017");  } else { $t_p_share_on_facebook = get_theme_mod( 't_p_share_on_facebook' ); } ?>
+    <?php if ( false == get_theme_mod( 't_p_share_on_twitter', false ) ) { $t_p_share_on_twitter = esc_html__("Tweet on Twitter", "newspaper2017");  } else { $t_p_share_on_twitter = get_theme_mod( 't_p_share_on_twitter' ); } ?>
+    <?php if ( false == get_theme_mod( 't_c_comments', false ) ) { $t_c_comments = esc_html__("Comments", "newspaper2017");  } else { $t_c_comments = get_theme_mod( 't_c_comments' ); } ?>
     <?php if(class_exists('md_walker')) { ?>
     <div class="post-statistic pull-left">
       <?php if(!empty($shares)){ ?><span class="stat-shares color-silver-light"><strong><?php echo esc_attr($shares); ?></strong> <?php echo esc_html($t_p_shares); ?></span><?php } ?>

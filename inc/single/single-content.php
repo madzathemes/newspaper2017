@@ -30,11 +30,11 @@ $url = wp_get_attachment_url( get_post_thumbnail_id(get_the_ID()));
     <?php if ( get_the_author_meta( 'description' )) { ?>
       <div class="author-info">
         <div class="author-avatar">
-          <?php echo get_avatar( get_the_author_meta( 'user_email' ), apply_filters( 'magazineplus_author_bio_avatar_size', 55 ) ); ?>
+          <?php echo get_avatar( get_the_author_meta( 'user_email' ), apply_filters( 'newspaper2017_author_bio_avatar_size', 55 ) ); ?>
           </div>
           <div class="author-description">
-            <h5><?php echo esc_html__( 'Author', 'magazineplus' ); ?></h5>
-            <a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" rel="author"><h3><?php printf( esc_html__( '%s', 'magazineplus' ), get_the_author() ); ?></h3></a>
+            <h5><?php echo esc_html__( 'Author', 'newspaper2017' ); ?></h5>
+            <a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" rel="author"><h3><?php printf( esc_html__( '%s', 'newspaper2017' ), get_the_author() ); ?></h3></a>
             <div class="mt-bio-social">
 
               <?php $twitterHandle = get_the_author_meta('twitter');
@@ -59,7 +59,7 @@ $url = wp_get_attachment_url( get_post_thumbnail_id(get_the_ID()));
           <p><?php the_author_meta( 'description' ); ?></p>
           <div class="author-link">
             <a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" rel="author">
-              <?php printf( esc_html__( 'View all posts by %s', 'magazineplus' ), get_the_author() ); ?>
+              <?php printf( esc_html__( 'View all posts by %s', 'newspaper2017' ), get_the_author() ); ?>
             </a>
           </div>
         </div>

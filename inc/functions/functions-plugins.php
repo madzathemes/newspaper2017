@@ -49,11 +49,11 @@ function newspaper2017_register_required_plugins() {
               'force_activation'		=> false,
         ),
         array(
-            'name'			=> esc_html__( "Magazin","newspaper2017" ), // The plugin name
-            'slug'			=> 'magazin-extras', // The plugin slug (typically the folder name)
-            'source'			=> get_template_directory() . '/all_plugins/magazin-extras.zip', // The plugin source
+            'name'			=> esc_html__( "Magazine Plug","newspaper2017" ), // The plugin name
+            'slug'			=> 'magazine-plug', // The plugin slug (typically the folder name)
+            'source'			=> get_template_directory() . '/all_plugins/magazine-plug.zip', // The plugin source
             'required'			=> true, // If false, the plugin is only 'recommended' instead of required
-            'version'			=> '1.2.9', // E.g. 1.0.0. If set, the active plugin must be this version or higher, otherwise a notice is presented
+            'version'			=> '3.9', // E.g. 1.0.0. If set, the active plugin must be this version or higher, otherwise a notice is presented
             'force_activation'		=> false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch
             'force_deactivation'	=> false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins
             'external_url'		=> '', // If set, overrides default API URL and points to an external URL
