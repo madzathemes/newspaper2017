@@ -176,9 +176,11 @@ function newspaper2017_top_content() { $option = get_option("newspaper2017_theme
 						$ip = $_SERVER['REMOTE_ADDR'];
 					}
 					$query = @unserialize(wp_remote_fopen('http://ip-api.com/php/'.$ip));
-
+					if($query && $query['status'] == 'success') {
+						echo esc_attr($query['city']);
+					} else {
 						echo 'London';
-					
+					}
 				?></div>
 				<div class="head-weather">
 					<div id="weather"></div>

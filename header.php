@@ -19,7 +19,7 @@ if  (!empty($option['menu_top_ad'])) {
 	$time = "ture";
 }
 ?>
-<body <?php body_class(); ?><?php if(!empty($option['header_time']) and $time == "ture") { if($option['header_time']=="on") { ?> onload="startTime()" <?php } } ?>>
+<body <?php body_class(); ?>>
 
 <?php
 $bg_post = get_post_meta(get_the_ID(), "magazin_background_image", true);
