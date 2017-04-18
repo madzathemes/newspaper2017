@@ -11,8 +11,12 @@
 <?php function newspaper2017_single_social() {
 
 /* Share Meta from Magazin framework */
+$share_top = "";
+$share_top = get_post_meta(get_the_ID(), "magazin_post_share_top", true);
+
+/* Share Meta from Magazin framework */
 $share = get_post_meta(get_the_ID(), "magazin_share_count", true);
-$shares = "";
+$shares = "1";
 if (function_exists('magazin_theme_setup')) {
   $shares = magazin_get_shares(get_the_ID());
 }
@@ -21,10 +25,9 @@ if (!empty($share)){
 }
 /* View Meta from Magazin framework */
 $view = get_post_meta(get_the_ID(), "magazin_view_count", true);
-$viewes = "0";
-if (!empty($view)){
-	$viewes = $view;
-}
+$views = get_post_meta(get_the_ID(), "magazin_post_views_count", true);
+$viewes = $views + "0";
+if (!empty($view)){ $viewes = $view + $views; $viewes = number_format($viewes); }
 
 $url = wp_get_attachment_url( get_post_thumbnail_id(get_the_ID()));
 
@@ -39,11 +42,18 @@ $url = wp_get_attachment_url( get_post_thumbnail_id(get_the_ID()));
         <small class="color-silver-light"><?php the_date('M d, Y'); ?></small>
       </div>
     </div>
+    <?php if ( false == get_theme_mod( 't_p_shares', false ) ) { $t_p_shares = esc_html__("Shares", "techpro");  } else { $t_p_shares = get_theme_mod( 't_p_shares' ); } ?>
+    <?php if ( false == get_theme_mod( 't_p_views', false ) ) { $t_p_views = esc_html__("Views", "techpro");  } else { $t_p_views = get_theme_mod( 't_p_views' ); } ?>
+    <?php if ( false == get_theme_mod( 't_p_share_on_facebook', false ) ) { $t_p_share_on_facebook = esc_html__("Share on Facebook", "techpro");  } else { $t_p_share_on_facebook = get_theme_mod( 't_p_share_on_facebook' ); } ?>
+    <?php if ( false == get_theme_mod( 't_p_share_on_twitter', false ) ) { $t_p_share_on_twitter = esc_html__("Tweet on Twitter", "techpro");  } else { $t_p_share_on_twitter = get_theme_mod( 't_p_share_on_twitter' ); } ?>
+    <?php if ( false == get_theme_mod( 't_c_comments', false ) ) { $t_c_comments = esc_html__("Comments", "techpro");  } else { $t_c_comments = get_theme_mod( 't_c_comments' ); } ?>
+    <?php if(class_exists('md_walker')) { ?>
     <div class="post-statistic pull-left">
-      <span class="stat-shares color-silver-light"><?php echo esc_attr($shares); ?></span>
-      <span class="stat-views"><?php if(function_exists('magazin_PostViews')){   echo esc_attr($viewes) + magazin_PostViews(get_the_ID()); } ?></span>
+      <?php if(!empty($shares)){ ?><span class="stat-shares color-silver-light"><strong><?php echo esc_attr($shares); ?></strong> <?php echo esc_html($t_p_shares); ?></span><?php } ?>
+      <?php if(!empty($viewes)){ ?><span class="stat-views"><strong><?php echo esc_attr($viewes) ?></strong> <?php echo esc_html($t_p_views); ?></span><?php } ?>
       <?php if (get_comments_number()!="0") { ?><span class="stat-comments color-silver-light"><?php echo get_comments_number(); ?></span><?php } ?>
     </div>
+    <?php } ?>
     <ul class="share top">
       <li class="share-facebook"><a href="http://www.facebook.com/sharer.php?u=<?php the_permalink();?>" target="_blank"><span><?php echo esc_html__('Share Post', 'newspaper2017'); ?></span></a></li>
       <?php $input = get_the_title().' '.get_the_permalink(); $title = str_replace( ' ', '+', $input ); ?>
