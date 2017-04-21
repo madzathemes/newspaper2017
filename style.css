@@ -3454,8 +3454,8 @@ background-color: rgba(0,0,0,.6);
   .poster-info {
     text-align: left;
   }
-  .poster .poster-data {
-    display: none;
+  .poster > .poster-data {
+    display: none!important;
   }
   h2.heading.heading-left,
   h2.heading.heading-right {
