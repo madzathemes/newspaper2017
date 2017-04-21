@@ -1653,6 +1653,9 @@ h2.heading::before {
 .poster.normal {
   margin-bottom: 4px;
 }
+.poster > .poster-data {
+  display: none!important;
+}
 .lazy-hidden {
     opacity: 0;
 }
@@ -3454,9 +3457,7 @@ background-color: rgba(0,0,0,.6);
   .poster-info {
     text-align: left;
   }
-  .poster > .poster-data {
-    display: none!important;
-  }
+
   h2.heading.heading-left,
   h2.heading.heading-right {
     text-align: center !important;
