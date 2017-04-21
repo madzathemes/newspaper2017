@@ -81,7 +81,6 @@
 			data-youtube="<?php  $data = get_option("youtube_username"); if(!empty($data)) { echo esc_attr($data); } else { echo "empty"; } ?>"></div></div>
 	</div>
 	</div>
-</div>
 <a href="#" class="footer-scroll-to-top"></a>
 
 <?php wp_footer(); ?>
