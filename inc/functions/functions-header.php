@@ -43,7 +43,7 @@ if(!empty($option['mobile_header_type'])) {
 		<div class="nav-search-wrap pull-right">
 			<div class="nav-search pointer"></div>
 			<div class="nav-search-input">
-				<form method="get" id="searchform" action="<?php echo esc_url(home_url('/')); ?>/">
+				<form method="get" action="<?php echo esc_url(home_url('/')); ?>/">
 					<input type="text" placeholder="<?php esc_html_e( 'Type and hit enter to search ...', 'newspaper2017' ); ?>"  name="s" >
 				</form>
 			</div>
@@ -226,7 +226,7 @@ add_filter('newspaper2017_logo_mobile','newspaper2017_logo_mobile');
 function newspaper2017_nav() {
 
 		wp_nav_menu( array('theme_location'=>"primary",  'menu_class' => 'sf-menu', 'echo' => true, 'depth' => 3));
-	
+
 }
 add_filter('newspaper2017_nav','newspaper2017_nav');
 
