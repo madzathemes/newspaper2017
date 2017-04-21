@@ -2733,7 +2733,7 @@ background-color: rgba(0,0,0,.6);
 }
 .entry-meta .author-info {
   background: #fff !important;
-  border: 2px solid rgba(205, 206, 209, 0.33) !important;
+  border: 1px solid rgba(205, 206, 209, 0.33) !important;
 }
 .single-media-title .mt-author-soc a:before   {
   color: white;
@@ -3453,6 +3453,9 @@ background-color: rgba(0,0,0,.6);
   }
   .poster-info {
     text-align: left;
+  }
+  .poster .poster-data {
+    display: none;
   }
   h2.heading.heading-left,
   h2.heading.heading-right {
