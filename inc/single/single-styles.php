@@ -1,5 +1,6 @@
 <?php function post_style_1(){ ?>
-<?php $ls = get_post_meta(get_the_ID(), "magazin_post_sidebar", true); $fl = "pull-left"; $fs = "pull-right"; $o = get_option("newspaper2017_theme_options"); if(!empty($ls)){ $l = $ls; } else { if(!empty($o['post_sidebar'])){ $l = $o['post_sidebar']; } else { 	$l = "left"; } } if ($l == "left") { $fl = "pull-right"; $fs = "pull-left"; } ?>
+<?php $ls = get_post_meta(get_the_ID(), "magazin_post_sidebar", true); $fl = "pull-left"; $fs = "pull-right"; $o = get_option("newspaper2017_theme_options"); if(!empty($ls)){ $l = $ls; } else { if(!empty($o['post_sidebar'])){ $l = $o['post_sidebar']; } else { 	$l = "left"; } } if ($l == "left") { $fl = "pull-left"; $fs = "pull-right"; } ?>
+
 <div class="post-content-wrap mt-content-container">
   <div class="container">
     <div class="row">
@@ -12,7 +13,7 @@
         <div class="entry-content"><?php the_content(); ?></div>
         <?php newspaper2017_single_bottom(); ?>
       </div>
-      <div class="col-md-4 pull-left <?php echo sanitize_html_class($fs); ?> sidebar theiaStickySidebar">
+      <div class="col-md-4 pull-right <?php echo sanitize_html_class($fs); ?> sidebar theiaStickySidebar">
         <?php newspaper2017_single_sidebar(); ?>
       </div>
     </div>

@@ -167,24 +167,7 @@ function newspaper2017_top_content() { $option = get_option("newspaper2017_theme
 
 		<?php if(!empty($option['header_weather'])) { ?>
 			<?php if($option['header_weather']=="on") { ?>
-				<div class="weather-city hidden"><?php
-					if ( ! empty( $_SERVER['HTTP_CLIENT_IP'] ) ) {
-						$ip = $_SERVER['HTTP_CLIENT_IP'];
-					} elseif ( ! empty( $_SERVER['HTTP_X_FORWARDED_FOR'] ) ) {
-						$ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
-					} else {
-						$ip = $_SERVER['REMOTE_ADDR'];
-					}
-					$query = @unserialize(wp_remote_fopen('http://ip-api.com/php/'.$ip));
-					if($query && $query['status'] == 'success') {
-						echo esc_attr($query['city']);
-					} else {
-						echo 'London';
-					}
-				?></div>
-				<div class="head-weather">
-					<div id="weather"></div>
-				</div>
+				<?php if ( function_exists( 'mt_weather_funciton' ) ) { mt_weather_funciton(); }  ?>
 			<?php } ?>
 		<?php } ?>
 
@@ -241,7 +224,7 @@ function newspaper2017_logo_mobile() {
 add_filter('newspaper2017_logo_mobile','newspaper2017_logo_mobile');
 
 function newspaper2017_nav() {
-	if(class_exists('md_walker__')) {
+	if(class_exists('md_walker')) {
 		wp_nav_menu( array('theme_location'=>"primary",  'menu_class' => 'sf-menu', 'walker'	=> new md_walker, 'echo' => true, 'depth' => 3));
 	} else {
 		wp_nav_menu( array('theme_location'=>"primary",  'menu_class' => 'sf-menu', 'echo' => true, 'depth' => 3));
