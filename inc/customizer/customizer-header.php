@@ -500,19 +500,7 @@ function newspaper2017_customize_header($wp_customize){
       ),
    ));
 
-   Kirki::add_field( 'newspaper2017_theme_options[mobile_header_type]', array(
-    'type'        => 'radio-buttonset',
-    'settings'    => 'newspaper2017_theme_options[mobile_header_type]',
-    'label'       => esc_attr__( 'Mobile Header', 'newspaper2017' ),
-    'section'     => 'newspaper2017_header_top',
-    'default'     => '1',
-    'priority'    => 1,
-    'option_type'           => 'option',
-    'choices'     => array(
-      '1'   => esc_attr__( 'Style 1', 'newspaper2017' ),
-      '2' => esc_attr__( 'Style 2', 'newspaper2017' ),
-    ),
-  ));
+
 
    Kirki::add_field( 'newspaper2017_theme_options[header_link_blank]', array(
       'type'        => 'switch',
@@ -545,7 +533,7 @@ function newspaper2017_customize_header($wp_customize){
    Kirki::add_field( 'newspaper2017_theme_options[menu_random]', array(
      	'type'        => 'switch',
      	'settings'    => 'newspaper2017_theme_options[menu_random]',
-     	'label'       => esc_attr__( 'Random Button', 'newspaper2017' ),
+     	'label'       => esc_attr__( 'Header Button', 'newspaper2017' ),
      	'section'     => 'newspaper2017_header_top',
      	'default'     => '0',
        'option_type' => 'option',
@@ -569,6 +557,19 @@ function newspaper2017_customize_header($wp_customize){
          '2' => esc_attr__( 'Disable', 'newspaper2017' ),
        ),
    ) );
+
+   Kirki::add_field( 'mt_header_time', array(
+      'type'        => 'switch',
+      'settings'    => 'mt_header_time',
+      'label'       => esc_attr__( 'Header Time', 'newspaper2017' ),
+      'section'     => 'newspaper2017_header_top',
+      'default'     => 'on',
+      'priority'    => 10,
+      'choices'     => array(
+        'on'  => esc_attr__( 'On', 'newspaper2017' ),
+        'off' => esc_attr__( 'Off', 'newspaper2017' ),
+      ),
+      ));
 
 		// Latest Posts
 		$wp_customize->add_setting('newspaper2017_theme_options[url_latest]', array(
@@ -624,23 +625,6 @@ function newspaper2017_customize_header($wp_customize){
 			'type' => 'dropdown-pages',
 			'settings' => 'newspaper2017_theme_options[url_trending]',
 			'priority'   => 5,
-		));
-
-		// Time widget
-		$wp_customize->add_setting('newspaper2017_theme_options[header_time]', array(
-				'capability'     => 'edit_theme_options',
-				'type'           => 'option',
-				'sanitize_callback' => 'esc_attr',
-			));
-		$wp_customize->add_control( 'newspaper2017_theme_options[header_time]', array(
-				'settings' => 'newspaper2017_theme_options[header_time]',
-				'label'    	=> esc_html__('Time and Date', 'newspaper2017'),
-				'section' => 'newspaper2017_header_top',
-				'type'    => 'select',
-				'choices'    => array(
-					'off' => 'off',
-					'on' => 'on',
-				),
 		));
 
 		// Weather widget

@@ -24,14 +24,8 @@ else if(!empty($option['menu_background_width'])) {
 	$menu_full =  '';
 	$menu_boxed =  'menu-background';
 }
-$menu_mobile = "";
-if(!empty($option['mobile_header_type'])) {
-	if($option['mobile_header_type']=="2") {
-		$menu_mobile =  'hide-mobile';
-	}
-}
 ?>
-<?php if(!empty($option['mobile_header_type'])) { if($option['mobile_header_type']=="2") { ?>
+
 <div class="mt-header-mobile menu-background hide-desktop top-nav">
 	<div class="nav-mobile pointer pull-left">
 		<div class="mt-m-cool-button">
@@ -51,8 +45,8 @@ if(!empty($option['mobile_header_type'])) {
 	<?php } } ?>
 </div>
 <div class="mt-header-space hide-desktop"></div>
-<?php } } ?>
-<div class="header-wrap  <?php echo esc_html($menu_mobile); ?>">
+
+<div class="header-wrap hide-mobile">
 	<div class="header-mt-container-wrap">
 		<div class="container mt-header-container">
 			<div class="row">
@@ -110,37 +104,6 @@ if(!empty($option['mobile_header_type'])) {
 						<?php } } ?>
 					</div>
 				</div>
-				<div class="hover-menu-wrap">
-					<div class="hover-menu">
-						<div class="row hide-mobile">
-							<?php if ( is_active_sidebar( 'menu-column-1' ) and is_active_sidebar( 'menu-column-2' ) and is_active_sidebar( 'menu-column-3' ) ) { ?>
-
-								<div class="col-md-4"><?php dynamic_sidebar( 'menu-column-1' ); ?></div>
-								<div class="col-md-4"><?php dynamic_sidebar( 'menu-column-2' ); ?></div>
-								<div class="col-md-4"><?php dynamic_sidebar( 'menu-column-3' ); ?></div>
-
-							<?php } else if ( is_active_sidebar( 'menu-column-1' ) and is_active_sidebar( 'menu-column-2' ) ) { ?>
-
-								<div class="col-md-4"><?php dynamic_sidebar( 'menu-column-1' ); ?></div>
-								<div class="col-md-4"><?php dynamic_sidebar( 'menu-column-2' ); ?></div>
-
-							<?php } else if ( is_active_sidebar( 'menu-column-1' ) ) { ?>
-
-								<div class="col-md-12"><?php dynamic_sidebar( 'menu-column-1' ); ?></div>
-
-							<?php } ?>
-						</div>
-						<?php if(!empty($option['mobile_header_type'])) { if($option['mobile_header_type']=="2") { } else { ?>
-							<div class="row hide-desktop">
-								<div class="col-md-12"><?php newspaper2017_nav_mobile(); ?></div>
-							</div>
-						<?php } } else { ?>
-							<div class="row hide-desktop">
-								<div class="col-md-12"><?php newspaper2017_nav_mobile(); ?></div>
-							</div>
-						<?php } ?>
-					</div>
-				</div>
 			</div>
 		</div>
 	</div>
@@ -156,13 +119,11 @@ function newspaper2017_top_content() { $option = get_option("newspaper2017_theme
 			<?php if(!empty($option['url_trending'])) { ?>	<a <?php if($option['url_trending']==get_the_ID()) { ?>class="active"<?php } ?> href="<?php echo get_permalink(esc_html($option['url_trending'])); ?>"><?php esc_html_e( 'TRENDING', 'newspaper2017' ); ?> <span><?php esc_html_e( 'Posts', 'newspaper2017' ); ?></span></a><?php } ?>
 		</div>
 
-		<?php if(!empty($option['header_time'])) { ?>
-			<?php if($option['header_time']=="on") { ?>
+		<?php if ( true == get_theme_mod( 'mt_header_time', false ) ) {?>
 				<div class="head-time">
 					<div id="time-live">00:00<span>:00</span></div>
 					<div class="time-date"><?php echo date( 'd M' ); ?></div>
 				</div>
-			<?php } ?>
 		<?php } ?>
 
 		<?php if(!empty($option['header_weather'])) { ?>

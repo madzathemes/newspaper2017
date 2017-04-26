@@ -4,7 +4,7 @@ function newspaper2017_customize_posts($wp_customize){
 
 
   $wp_customize->add_section('posts_default_settings', array(
-    'title'    	=> esc_html__('Post Layouts', 'mellany'),
+    'title'    	=> esc_html__('Post Layouts', 'newspaper2017'),
     'priority'       => 301,
     'panel'  => 'magazin_posts'
   ));

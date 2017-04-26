@@ -17,6 +17,14 @@ function checkTime(i) {
 
 jQuery(document).ready(function() {
   'use strict';
+
+  jQuery(".nav-mobile, .nav-button").on("click",function() {
+  jQuery('body').addClass("mobile-menu-active");
+  });
+  jQuery(".mt-smart-menu .close, .mt-smart-menu-out").on("click",function() {
+    jQuery('body').removeClass("mobile-menu-active");
+  });
+
   var weatherlocation = jQuery('.weather-city').html();
 
   jQuery.simpleWeather({

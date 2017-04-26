@@ -42,13 +42,11 @@ if(!empty($style)){
 <?php } ?>
 
 
-<?php if(!empty($option['mobile_header_type'])) { if($option['mobile_header_type']=="2") { ?>
 <div class="mt-smart-menu menu-background">
 	<span class="close pointer"></span>
 	<?php newspaper2017_socials(); ?>
 	<?php newspaper2017_nav_mobile(); ?>
 </div>
-<?php } } ?>
 
 <div class="mt-outer-wrap">
 

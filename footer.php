@@ -1,5 +1,9 @@
 <div class="footer-wrap">
-	<?php $option = get_option("newspaper2017_theme_options"); ?>
+	<?php $option = get_option("newspaper2017_theme_options");
+	if ( false == get_theme_mod( 't_o_about_us', false ) ) { $t_o_about_us = esc_html__("About Us", "newspaper2017");  } else { $t_o_about_us = get_theme_mod( 't_o_about_us' ); }
+	if ( false == get_theme_mod( 't_o_follow_us', false ) ) { $t_o_follow_us = esc_html__("Follow Us", "newspaper2017");  } else { $t_o_follow_us = get_theme_mod( 't_o_follow_us' ); }
+	if ( false == get_theme_mod( 't_o_contact_us', false ) ) { $t_o_contact_us = esc_html__("Contact Us:", "newspaper2017");  } else { $t_o_contact_us = get_theme_mod( 't_o_contact_us' ); }
+	?>
 	<?php if(!empty($option['footer_page'])){ ?>
 		<?php $footer_page = $option['footer_page']; ?>
 		<?php $footer = new WP_Query("page_id=$footer_page"); while($footer->have_posts()) : $footer->the_post(); ?>
@@ -42,12 +46,12 @@
 									<?php } ?>
 								</div>
 								<div class="col-md-4 footer-about">
-									<h2><?php echo esc_html__('About Us', 'newspaper2017'); ?></h2>
+									<h2><?php echo esc_html($t_o_about_us); ?></h2>
 									<p><?php echo html_entity_decode(get_theme_mod('newspaper2017_footer_about_us', 'Donec eu tellus convallis, vehicula neque sed, mattis elit. Praesent ornare, ligula in efficitur egestas, massa lacus vulputate enim')); ?> </p>
-									<p><?php echo esc_html__('Contact us:', 'newspaper2017'); ?> <a class="mail" href="mailto:<?php echo esc_html(get_theme_mod('newspaper2017_footer_about_us_mail', 'info@newspaper2017.com')); ?>" target="_top"><?php echo esc_html(get_theme_mod('newspaper2017_footer_about_us_mail', 'info@newspaper2017.com')); ?></a></p>
+									<p><?php echo esc_html($t_o_contact_us); ?> <a class="mail" href="mailto:<?php echo esc_html(get_theme_mod('newspaper2017_footer_about_us_mail', 'info@newspaper2017.com')); ?>" target="_top"><?php echo esc_html(get_theme_mod('newspaper2017_footer_about_us_mail', 'info@newspaper2017.com')); ?></a></p>
 								</div>
 								<div class="col-md-5 footer-social">
-									<h2><?php echo esc_html__('Follow Us', 'newspaper2017'); ?></h2>
+									<h2><?php echo esc_html($t_o_follow_us); ?></h2>
 									<?php newspaper2017_socials(); ?>
 									<p><?php echo html_entity_decode(get_theme_mod('newspaper2017_footer_follow_us', 'Donec eu tellus convallis, vehicula neque sed')); ?></p>
 								</div>
