@@ -1,31 +1,36 @@
 <?php
-function newspaper2017_customize_colors($wp_customize){
+function mellany_customize_colors($wp_customize){
 
   $wp_customize->add_panel( 'colors_settings', array(
     'priority'       => 300,
     'capability'     => 'edit_theme_options',
-    'title'    	=> esc_html__('Colors', 'newspaper2017'),
+    'title'    	=> esc_html__('Style', 'mellany'),
   ));
 
-  $wp_customize->add_section('background_settings', array(
-    'title'    	=> esc_html__('Background', 'newspaper2017'),
+  $wp_customize->add_section('general_style_settings', array(
+    'title'    	=> esc_html__('General', 'mellany'),
     'panel'  => 'colors_settings'
   ));
 
-  Kirki::add_field( 'newspaper2017_theme_options[background_image]', array(
+  $wp_customize->add_section('background_settings', array(
+    'title'    	=> esc_html__('Background', 'mellany'),
+    'panel'  => 'colors_settings'
+  ));
+
+  Kirki::add_field( 'mellany_theme_options[background_image]', array(
     'type'        => 'image',
-    'settings'    => 'newspaper2017_theme_options[background_image]',
-    'label'       => esc_html__( 'Background Image', 'newspaper2017' ),
+    'settings'    => 'mellany_theme_options[background_image]',
+    'label'       => esc_html__( 'Background Image', 'mellany' ),
     'section'     => 'background_settings',
     'default'     => '',
     'option_type' => 'option',
     'priority'    => 10,
   ) );
 
-  Kirki::add_field( 'newspaper2017_theme_options[background_color]', array(
+  Kirki::add_field( 'mellany_theme_options[background_color]', array(
     'type'        => 'color',
-    'settings'    => 'newspaper2017_theme_options[background_color]',
-    'label'       => esc_html__( 'Background Color', 'newspaper2017' ),
+    'settings'    => 'mellany_theme_options[background_color]',
+    'label'       => esc_html__( 'Background Color', 'mellany' ),
     'section'     => 'background_settings',
     'default'     => '',
     'option_type' => 'option',
@@ -34,449 +39,439 @@ function newspaper2017_customize_colors($wp_customize){
 
   // GENERAL COLORS //
   $wp_customize->add_section('colors_general', array(
-    'title'    	=> esc_html__('General Colors', 'newspaper2017'),
+    'title'    	=> esc_html__('General', 'mellany'),
     'panel'  => 'colors_settings'
   ));
 
-  $wp_customize->add_setting('newspaper2017_theme_options[colors_default]', array(
+  $wp_customize->add_setting('mellany_theme_options[colors_default]', array(
       'capability'        => 'edit_theme_options',
       'type'           => 'option',
       'sanitize_callback' => 'sanitize_hex_color',
     ));
-  $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'newspaper2017_theme_options[colors_default]', array(
-      'label'    => esc_html__('Site Color', 'newspaper2017'),
-      'section'  => 'colors_general',
-      'settings' => 'newspaper2017_theme_options[colors_default]',
+  $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'mellany_theme_options[colors_default]', array(
+      'label'    => esc_html__('Site Color', 'mellany'),
+      'section'  => 'general_style_settings',
+      'settings' => 'mellany_theme_options[colors_default]',
     )));
 
-  $wp_customize->add_setting('newspaper2017_theme_options[colors_header_objects]', array(
-      'capability'        => 'edit_theme_options',
-      'type'           => 'option',
-      'sanitize_callback' => 'sanitize_hex_color',
-    ));
-  $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'newspaper2017_theme_options[colors_header_objects]', array(
-      'label'    => esc_html__('Header Objects', 'newspaper2017'),
-      'section'  => 'colors_general',
-      'settings' => 'newspaper2017_theme_options[colors_header_objects]',
-  )));
 
-  $wp_customize->add_setting('newspaper2017_theme_options[colors_button]', array(
+  $wp_customize->add_setting('mellany_theme_options[colors_button]', array(
       'capability'        => 'edit_theme_options',
       'type'           => 'option',
       'sanitize_callback' => 'sanitize_hex_color',
     ));
-  $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'newspaper2017_theme_options[colors_button]', array(
-      'label'    => esc_html__('Form Button', 'newspaper2017'),
-      'section'  => 'colors_general',
-      'settings' => 'newspaper2017_theme_options[colors_button]',
-  )));
-
-  $wp_customize->add_setting('newspaper2017_theme_options[colors_social_hover]', array(
-      'capability'        => 'edit_theme_options',
-      'type'           => 'option',
-      'sanitize_callback' => 'sanitize_hex_color',
-    ));
-  $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'newspaper2017_theme_options[colors_social_hover]', array(
-      'label'    => esc_html__('Social Widget Hover', 'newspaper2017'),
-      'section'  => 'colors_general',
-      'settings' => 'newspaper2017_theme_options[colors_social_hover]',
+  $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'mellany_theme_options[colors_button]', array(
+      'label'    => esc_html__('Form Button', 'mellany'),
+      'section'  => 'general_style_settings',
+      'settings' => 'mellany_theme_options[colors_button]',
   )));
 
 
 
   // MENU COLORS //
   $wp_customize->add_section('colors_menu', array(
-    'title'    	=> esc_html__('Menu Colors', 'newspaper2017'),
+    'title'    	=> esc_html__('Header & Menu Colors', 'mellany'),
     'panel'  => 'colors_settings'
   ));
 
-  Kirki::add_field( 'newspaper2017_theme_options[menu_background_width]', array(
-  	'type'        => 'radio-buttonset',
-  	'settings'    => 'newspaper2017_theme_options[menu_background_width]',
-  	'label'       => esc_html__( 'Menu Style', 'newspaper2017' ),
-  	'section'     => 'colors_menu',
-  	'default'     => 'boxed',
-  	'priority'    => 1,
-    'option_type'           => 'option',
-  	'choices'     => array(
-  		'boxed'   => esc_attr__( 'Boxed', 'newspaper2017' ),
-  		'full' => esc_attr__( 'Full Width', 'newspaper2017' ),
-  	),
- ));
-
-  Kirki::add_field( 'newspaper2017_theme_options[colors_menu_bg_left]', array(
-    'type'        => 'color',
-    'settings'    => 'newspaper2017_theme_options[colors_menu_bg_left]',
-    'label'       => esc_html__( 'Background Left', 'newspaper2017' ),
+  Kirki::add_field( 'mt_colors_header', array(
+    'type'        => 'multicolor',
+    'settings'    => 'mt_colors_header',
+    'label'       => esc_attr__( 'Header', 'mellany' ),
     'section'     => 'colors_menu',
     'option_type' => 'option',
     'priority'    => 1,
+    'choices'     => array(
+        'background'    => esc_attr__( 'Background', 'mellany' ),
+        'link'   => esc_attr__( 'Link', 'mellany' ),
+        'hover'  => esc_attr__( 'Hover', 'mellany' ),
+    ),
+    'default'     => array(
+        'background'    => '',
+        'link'    => '',
+        'hover'    => ''
+    ),
   ));
 
-  Kirki::add_field( 'newspaper2017_theme_options[colors_menu_bg_right]', array(
-    'type'        => 'color',
-    'settings'    => 'newspaper2017_theme_options[colors_menu_bg_right]',
-    'label'       => esc_html__( 'Background Right', 'newspaper2017' ),
+  Kirki::add_field( 'mt_colors_header_icons', array(
+       'type'        => 'multicolor',
+       'settings'    => 'mt_colors_header_icons',
+       'label'       => esc_attr__( 'Header Icons', 'mellany' ),
+       'section'     => 'colors_menu',
+       'option_type' => 'option',
+       'priority'    => 1,
+       'choices'     => array(
+           'latest'    => esc_attr__( 'Latest', 'mellany' ),
+           'popular'   => esc_attr__( 'Popular', 'mellany' ),
+           'hot'  => esc_attr__( 'Hot', 'mellany' ),
+           'trending'  => esc_attr__( 'Trending', 'mellany' ),
+       ),
+       'default'     => array(
+           'latest'    => '',
+           'popular'    => '',
+           'hot'    => '',
+           'trending'    => '',
+      ),
+   ));
+
+   Kirki::add_field( 'mt_colors_time', array(
+     'type'        => 'multicolor',
+     'settings'    => 'mt_colors_time',
+     'label'       => esc_attr__( 'Time', 'mellany' ),
+     'section'     => 'colors_menu',
+     'option_type' => 'option',
+     'priority'    => 1,
+     'choices'     => array(
+         'clock'    => esc_attr__( 'Clock', 'mellany' ),
+         'seconds'   => esc_attr__( 'Seconds', 'mellany' ),
+         'date'  => esc_attr__( 'Date', 'mellany' ),
+     ),
+     'default'     => array(
+         'clock'    => '',
+         'seconds'    => '',
+         'date'    => ''
+     ),
+   ));
+
+
+  Kirki::add_field( 'mt_colors_header_button', array(
+    'type'        => 'multicolor',
+    'settings'    => 'mt_colors_header_button',
+    'label'       => esc_attr__( 'Header Button', 'mellany' ),
     'section'     => 'colors_menu',
     'option_type' => 'option',
-    'priority'    => 2,
+    'priority'    => 1,
+    'choices'     => array(
+        'text'    => esc_attr__( 'Text', 'mellany' ),
+        'text_hover'   => esc_attr__( 'Hover', 'mellany' ),
+        'background'  => esc_attr__( 'Background', 'mellany' ),
+        'background_hover'  => esc_attr__( 'Hover', 'mellany' ),
+    ),
+    'default'     => array(
+        'text'    => '',
+        'text_hover'    => '',
+        'background'    => '',
+        'background_hover'    => '',
+    ),
   ));
 
-  Kirki::add_field( 'newspaper2017_theme_options[colors_menu]', array(
-    'type'        => 'color',
-    'settings'    => 'newspaper2017_theme_options[colors_menu]',
-    'label'       => esc_html__( 'Link', 'newspaper2017' ),
+  Kirki::add_field( 'mt_colors_menu_bg', array(
+    'type'        => 'multicolor',
+    'settings'    => 'mt_colors_menu_bg',
+    'label'       => esc_attr__( 'Menu Background', 'mellany' ),
     'section'     => 'colors_menu',
     'option_type' => 'option',
-    'priority'    => 10,
+    'priority'    => 1,
+    'choices'     => array(
+        'in'    => esc_attr__( 'In', 'mellany' ),
+        'out'   => esc_attr__( 'Out', 'mellany' ),
+    ),
+    'default'     => array(
+        'in'    => '',
+        'out'    => '',
+    ),
   ));
 
-  Kirki::add_field( 'newspaper2017_theme_options[colors_menu_hover_text]', array(
-    'type'        => 'color',
-    'settings'    => 'newspaper2017_theme_options[colors_menu_hover_text]',
-    'label'       => esc_html__( 'Link Hover', 'newspaper2017' ),
+  Kirki::add_field( 'mt_colors_menu_link', array(
+    'type'        => 'multicolor',
+    'settings'    => 'mt_colors_menu_link',
+    'label'       => esc_attr__( 'Menu Links', 'mellany' ),
     'section'     => 'colors_menu',
     'option_type' => 'option',
-    'priority'    => 11,
+    'priority'    => 1,
+    'choices'     => array(
+        'text'    => esc_attr__( 'Lines', 'mellany' ),
+        'text_hover'   => esc_attr__( 'Hover', 'mellany' ),
+        'border'  => esc_attr__( 'Border', 'mellany' ),
+    ),
+    'default'     => array(
+        'text'    => '',
+        'text_hover'    => '',
+        'border'    => ''
+    ),
   ));
 
-  Kirki::add_field( 'newspaper2017_theme_options[colors_menu_hover]', array(
-    'type'        => 'color',
-    'settings'    => 'newspaper2017_theme_options[colors_menu_hover]',
-    'label'       => esc_html__( 'Link Hover Background', 'newspaper2017' ),
+  Kirki::add_field( 'mt_colors_menu_link_sub', array(
+    'type'        => 'multicolor',
+    'settings'    => 'mt_colors_menu_link_sub',
+    'label'       => esc_attr__( 'Menu Sub Links', 'mellany' ),
     'section'     => 'colors_menu',
     'option_type' => 'option',
-    'priority'    => 12,
+    'priority'    => 1,
+    'choices'     => array(
+        'text'    => esc_attr__( 'Lines', 'mellany' ),
+        'text_hover'   => esc_attr__( 'Hover', 'mellany' ),
+        'background'  => esc_attr__( 'Background', 'mellany' ),
+        'background_hover'  => esc_attr__( 'Hover', 'mellany' ),
+    ),
+    'default'     => array(
+        'text'    => '',
+        'text_hover'    => '',
+        'background'    => '',
+        'background_hover'    => '',
+    ),
   ));
 
-  Kirki::add_field( 'newspaper2017_theme_options[colors_menu_border]', array(
-    'type'        => 'color',
-    'settings'    => 'newspaper2017_theme_options[colors_menu_border]',
-    'label'       => esc_html__( 'Border', 'newspaper2017' ),
+  Kirki::add_field( 'mt_colors_menu_button', array(
+    'type'        => 'multicolor',
+    'settings'    => 'mt_colors_menu_button',
+    'label'       => esc_attr__( 'Menu Smart Button', 'mellany' ),
     'section'     => 'colors_menu',
     'option_type' => 'option',
-    'priority'    => 13,
+    'priority'    => 1,
+    'choices'     => array(
+        'text'    => esc_attr__( 'Lines', 'mellany' ),
+        'text_hover'   => esc_attr__( 'Hover', 'mellany' ),
+        'background'  => esc_attr__( 'Background', 'mellany' ),
+        'background_hover'  => esc_attr__( 'Hover', 'mellany' ),
+    ),
+    'default'     => array(
+        'text'    => '',
+        'text_hover'    => '',
+        'background'    => '',
+        'background_hover'    => '',
+    ),
   ));
 
-  Kirki::add_field( 'newspaper2017_theme_options[colors_menu_sub]', array(
-    'type'        => 'color',
-    'settings'    => 'newspaper2017_theme_options[colors_menu_sub]',
-    'label'       => esc_html__( 'Sub Link', 'newspaper2017' ),
+  Kirki::add_field( 'mt_colors_menu_search', array(
+    'type'        => 'multicolor',
+    'settings'    => 'mt_colors_menu_search',
+    'label'       => esc_attr__( 'Menu Search', 'mellany' ),
     'section'     => 'colors_menu',
     'option_type' => 'option',
-    'priority'    => 14,
+    'priority'    => 1,
+    'choices'     => array(
+        'text'    => esc_attr__( 'Text', 'mellany' ),
+        'text_hover'   => esc_attr__( 'Hover', 'mellany' ),
+        'background'  => esc_attr__( 'Background', 'mellany' ),
+        'background_hover'  => esc_attr__( 'Hover', 'mellany' ),
+    ),
+    'default'     => array(
+        'text'    => '',
+        'text_hover'    => '',
+        'background'    => '',
+        'background_hover'    => '',
+    ),
   ));
 
-  Kirki::add_field( 'newspaper2017_theme_options[colors_menu_sub_hover]', array(
-    'type'        => 'color',
-    'settings'    => 'newspaper2017_theme_options[colors_menu_sub_hover]',
-    'label'       => esc_html__( 'Sub Link Hover', 'newspaper2017' ),
+  Kirki::add_field( 'mt_colors_menu_icon', array(
+    'type'        => 'multicolor',
+    'settings'    => 'mt_colors_menu_icon',
+    'label'       => esc_attr__( 'Menu Social Icons', 'mellany' ),
     'section'     => 'colors_menu',
     'option_type' => 'option',
-    'priority'    => 15,
+    'priority'    => 1,
+    'choices'     => array(
+        'text'    => esc_attr__( 'Icon', 'mellany' ),
+        'hover'   => esc_attr__( 'Hover', 'mellany' ),
+    ),
+    'default'     => array(
+        'text'    => '',
+        'hover'    => '',
+    ),
   ));
 
-  Kirki::add_field( 'newspaper2017_theme_options[colors_menu_sub_background]', array(
-    'type'        => 'color',
-    'settings'    => 'newspaper2017_theme_options[colors_menu_sub_background]',
-    'label'       => esc_html__( 'Sub Link Background', 'newspaper2017' ),
+  Kirki::add_field( 'mt_colors_header_mobile', array(
+    'type'        => 'multicolor',
+    'settings'    => 'mt_colors_header_mobile',
+    'label'       => esc_attr__( 'Mobile Header', 'mellany' ),
     'section'     => 'colors_menu',
     'option_type' => 'option',
-    'priority'    => 14,
+    'priority'    => 1,
+    'choices'     => array(
+        'background'    => esc_attr__( 'Background', 'mellany' ),
+        'link'   => esc_attr__( 'Text', 'mellany' ),
+    ),
+    'default'     => array(
+        'background'    => '',
+        'link'    => '',
+    ),
   ));
 
-  Kirki::add_field( 'newspaper2017_theme_options[colors_menu_sub_hover_background]', array(
-    'type'        => 'color',
-    'settings'    => 'newspaper2017_theme_options[colors_menu_sub_hover_background]',
-    'label'       => esc_html__( 'Sub Link Background Hover', 'newspaper2017' ),
+  Kirki::add_field( 'mt_colors_header_fixed', array(
+    'type'        => 'multicolor',
+    'settings'    => 'mt_colors_header_fixed',
+    'label'       => esc_attr__( 'Fixed Header', 'mellany' ),
     'section'     => 'colors_menu',
     'option_type' => 'option',
-    'priority'    => 15,
+    'priority'    => 99,
+    'choices'     => array(
+        'background'    => esc_attr__( 'Background', 'mellany' ),
+        'link'   => esc_attr__( 'Link', 'mellany' ),
+        'hover'  => esc_attr__( 'Hover', 'mellany' ),
+    ),
+    'default'     => array(
+        'background'    => '',
+        'link'    => '',
+        'hover'    => ''
+    ),
   ));
 
-  Kirki::add_field( 'newspaper2017_theme_options[colors_menu_sub_cat]', array(
-    'type'        => 'color',
-    'settings'    => 'newspaper2017_theme_options[colors_menu_sub_cat]',
-    'label'       => esc_html__( 'Sub Category Link', 'newspaper2017' ),
+  Kirki::add_field( 'mt_colors_menu_smart', array(
+    'type'        => 'multicolor',
+    'settings'    => 'mt_colors_menu_smart',
+    'label'       => esc_attr__( 'Smart Menu', 'mellany' ),
     'section'     => 'colors_menu',
     'option_type' => 'option',
-    'priority'    => 16,
-  ));
-
-  Kirki::add_field( 'newspaper2017_theme_options[colors_menu_sub_cat_hover]', array(
-    'type'        => 'color',
-    'settings'    => 'newspaper2017_theme_options[colors_menu_sub_cat_hover]',
-    'label'       => esc_html__( 'Sub Category Link Hover', 'newspaper2017' ),
-    'section'     => 'colors_menu',
-    'option_type' => 'option',
-    'priority'    => 17,
-  ));
-
-  Kirki::add_field( 'newspaper2017_theme_options[colors_menu_sub_cat_bg]', array(
-    'type'        => 'color',
-    'settings'    => 'newspaper2017_theme_options[colors_menu_sub_cat_bg]',
-    'label'       => esc_html__( 'Sub Category Link Background', 'newspaper2017' ),
-    'section'     => 'colors_menu',
-    'option_type' => 'option',
-    'priority'    => 18,
-  ));
-
-  Kirki::add_field( 'newspaper2017_theme_options[colors_menu_sub_cat_hover_bg]', array(
-    'type'        => 'color',
-    'settings'    => 'newspaper2017_theme_options[colors_menu_sub_cat_hover_bg]',
-    'label'       => esc_html__( 'Sub Category Link Background Hover', 'newspaper2017' ),
-    'section'     => 'colors_menu',
-    'option_type' => 'option',
-    'priority'    => 18,
-  ));
-
-  Kirki::add_field( 'newspaper2017_theme_options[colors_menu_small_button]', array(
-    'type'        => 'color',
-    'settings'    => 'newspaper2017_theme_options[colors_menu_small_button]',
-    'label'       => esc_html__( 'Small Menu Button Hover', 'newspaper2017' ),
-    'section'     => 'colors_menu',
-    'option_type' => 'option',
-    'priority'    => 20,
-  ));
-
-  Kirki::add_field( 'newspaper2017_theme_options[colors_menu_small_button_background]', array(
-    'type'        => 'color',
-    'settings'    => 'newspaper2017_theme_options[colors_menu_small_button_background]',
-    'label'       => esc_html__( 'Small Menu Button Hover Background', 'newspaper2017' ),
-    'section'     => 'colors_menu',
-    'option_type' => 'option',
-    'priority'    => 20,
-  ));
-
-  Kirki::add_field( 'newspaper2017_theme_options[colors_menu_small_background]', array(
-    'type'        => 'color',
-    'settings'    => 'newspaper2017_theme_options[colors_menu_small_background]',
-    'label'       => esc_html__( 'Small Menu Background', 'newspaper2017' ),
-    'section'     => 'colors_menu',
-    'option_type' => 'option',
-    'priority'    => 21,
-  ));
-
-  Kirki::add_field( 'newspaper2017_theme_options[colors_menu_small_link]', array(
-    'type'        => 'color',
-    'settings'    => 'newspaper2017_theme_options[colors_menu_small_link]',
-    'label'       => esc_html__( 'Small Menu Link', 'newspaper2017' ),
-    'section'     => 'colors_menu',
-    'option_type' => 'option',
-    'priority'    => 22,
-  ));
-
-  Kirki::add_field( 'newspaper2017_theme_options[colors_menu_small_link_hover]', array(
-    'type'        => 'color',
-    'settings'    => 'newspaper2017_theme_options[colors_menu_small_link_hover]',
-    'label'       => esc_html__( 'Small Menu Link Hover', 'newspaper2017' ),
-    'section'     => 'colors_menu',
-    'option_type' => 'option',
-    'priority'    => 23,
-  ));
-
-  Kirki::add_field( 'newspaper2017_theme_options[colors_menu_small_text]', array(
-    'type'        => 'color',
-    'settings'    => 'newspaper2017_theme_options[colors_menu_small_text]',
-    'label'       => esc_html__( 'Small Menu Text', 'newspaper2017' ),
-    'section'     => 'colors_menu',
-    'option_type' => 'option',
-    'priority'    => 24,
-  ));
-
-  Kirki::add_field( 'newspaper2017_theme_options[colors_menu_random_background]', array(
-    'type'        => 'color',
-    'settings'    => 'newspaper2017_theme_options[colors_menu_random_background]',
-    'label'       => esc_html__( 'Random Button Hover Backgrond', 'newspaper2017' ),
-    'section'     => 'colors_menu',
-    'option_type' => 'option',
-    'priority'    => 32,
-  ));
-
-  Kirki::add_field( 'newspaper2017_theme_options[colors_menu_search_text]', array(
-    'type'        => 'color',
-    'settings'    => 'newspaper2017_theme_options[colors_menu_search_text]',
-    'label'       => esc_html__( 'Search Text', 'newspaper2017' ),
-    'section'     => 'colors_menu',
-    'option_type' => 'option',
-    'priority'    => 30,
-  ));
-
-  Kirki::add_field( 'newspaper2017_theme_options[colors_menu_search]', array(
-    'type'        => 'color',
-    'settings'    => 'newspaper2017_theme_options[colors_menu_search]',
-    'label'       => esc_html__( 'Search Backgrond', 'newspaper2017' ),
-    'section'     => 'colors_menu',
-    'option_type' => 'option',
-    'priority'    => 31,
+    'priority'    => 100,
+    'choices'     => array(
+        'background'    => esc_attr__( 'Background', 'mellany' ),
+        'link'   => esc_attr__( 'Link', 'mellany' ),
+        'hover'  => esc_attr__( 'Hover', 'mellany' ),
+        'out'  => esc_attr__( 'Out', 'mellany' ),
+    ),
+    'default'     => array(
+        'background'    => '',
+        'link'    => '',
+        'hover'    => '',
+        'out'    => '',
+    ),
   ));
 
 
   // FOOTER COLORS //
   $wp_customize->add_section('colors_footer', array(
-    'title'    	=> esc_html__('Footer Colors', 'newspaper2017'),
+    'title'    	=> esc_html__('Footer Colors', 'mellany'),
     'panel'  => 'colors_settings'
   ));
 
-  $wp_customize->add_setting('newspaper2017_theme_options[colors_footer_top_background]', array(
-      'capability'        => 'edit_theme_options',
-      'type'           => 'option',
-      'sanitize_callback' => 'sanitize_hex_color',
-  ));
-  $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'newspaper2017_theme_options[colors_footer_top_background]', array(
-      'label'    => esc_html__('Top Footer Background', 'newspaper2017'),
-      'section'  => 'colors_footer',
-      'settings' => 'newspaper2017_theme_options[colors_footer_top_background]',
-  )));
 
-  $wp_customize->add_setting('newspaper2017_theme_options[colors_footer_top_title]', array(
-      'capability'        => 'edit_theme_options',
-      'type'           => 'option',
-      'sanitize_callback' => 'sanitize_hex_color',
+  Kirki::add_field( 'mt_colors_footer_top', array(
+    'type'        => 'multicolor',
+    'settings'    => 'mt_colors_footer_top',
+    'label'       => esc_attr__( 'Footer Top Colors', 'mellany' ),
+    'section'     => 'colors_footer',
+    'option_type' => 'option',
+    'choices'     => array(
+        'background'    => esc_attr__( 'Background', 'mellany' ),
+        'title'   => esc_attr__( 'Title', 'mellany' ),
+        'text'   => esc_attr__( 'Text', 'mellany' ),
+        'link'  => esc_attr__( 'Link', 'mellany' ),
+        'hover'  => esc_attr__( 'Hover', 'mellany' ),
+    ),
+    'default'     => array(
+        'background'    => '',
+        'text'    => '',
+        'title'    => '',
+        'link'    => '',
+        'hover'    => '',
+    ),
   ));
-  $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'newspaper2017_theme_options[colors_footer_top_title]', array(
-      'label'    => esc_html__('Top Footer Title', 'newspaper2017'),
-      'section'  => 'colors_footer',
-      'settings' => 'newspaper2017_theme_options[colors_footer_top_title]',
-  )));
 
-  $wp_customize->add_setting('newspaper2017_theme_options[colors_footer_top_text]', array(
-      'capability'        => 'edit_theme_options',
-      'type'           => 'option',
-      'sanitize_callback' => 'sanitize_hex_color',
+  Kirki::add_field( 'mt_colors_footer_social', array(
+    'type'        => 'multicolor',
+    'settings'    => 'mt_colors_footer_social',
+    'label'       => esc_attr__( 'Footer Social Icons', 'mellany' ),
+    'section'     => 'colors_footer',
+    'option_type' => 'option',
+    'choices'     => array(
+        'icon'    => esc_attr__( 'Icon', 'mellany' ),
+        'hover'   => esc_attr__( 'Hover', 'mellany' ),
+        'background'   => esc_attr__( 'Background', 'mellany' ),
+        'background_hover'  => esc_attr__( 'Hover', 'mellany' ),
+    ),
+    'default'     => array(
+        'icon'    => '',
+        'hover'    => '',
+        'background'    => '',
+        'background_hover'    => '',
+    ),
   ));
-  $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'newspaper2017_theme_options[colors_footer_top_text]', array(
-      'label'    => esc_html__('Top Footer Text', 'newspaper2017'),
-      'section'  => 'colors_footer',
-      'settings' => 'newspaper2017_theme_options[colors_footer_top_text]',
-  )));
 
-  $wp_customize->add_setting('newspaper2017_theme_options[colors_footer_top_link]', array(
-      'capability'        => 'edit_theme_options',
-      'type'           => 'option',
-      'sanitize_callback' => 'sanitize_hex_color',
+  Kirki::add_field( 'mt_colors_footer_bottom', array(
+    'type'        => 'multicolor',
+    'settings'    => 'mt_colors_footer_bottom',
+    'label'       => esc_attr__( 'Footer Bottom Colors', 'mellany' ),
+    'section'     => 'colors_footer',
+    'option_type' => 'option',
+    'choices'     => array(
+        'background'    => esc_attr__( 'Background', 'mellany' ),
+        'border'   => esc_attr__( 'Border', 'mellany' ),
+        'text'   => esc_attr__( 'Text', 'mellany' ),
+        'link'  => esc_attr__( 'Link', 'mellany' ),
+        'hover'  => esc_attr__( 'Hover', 'mellany' ),
+    ),
+    'default'     => array(
+        'background'    => '',
+        'border'    => '',
+        'text'    => '',
+        'link'    => '',
+        'hover'    => '',
+    ),
   ));
-  $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'newspaper2017_theme_options[colors_footer_top_link]', array(
-      'label'    => esc_html__('Top Footer Link', 'newspaper2017'),
-      'section'  => 'colors_footer',
-      'settings' => 'newspaper2017_theme_options[colors_footer_top_link]',
-  )));
 
-  $wp_customize->add_setting('newspaper2017_theme_options[colors_footer_top_link_hover]', array(
-      'capability'        => 'edit_theme_options',
-      'type'           => 'option',
-      'sanitize_callback' => 'sanitize_hex_color',
+
+  // MENU COLORS //
+  $wp_customize->add_section('colors_other', array(
+    'title'    	=> esc_html__('Other Colors', 'mellany'),
+    'panel'  => 'colors_settings'
   ));
-  $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'newspaper2017_theme_options[colors_footer_top_link_hover]', array(
-      'label'    => esc_html__('Top Footer Link Hover', 'newspaper2017'),
-      'section'  => 'colors_footer',
-      'settings' => 'newspaper2017_theme_options[colors_footer_top_link_hover]',
-  )));
 
-  $wp_customize->add_setting('newspaper2017_theme_options[colors_footer_border]', array(
-      'capability'        => 'edit_theme_options',
-      'type'           => 'option',
-      'sanitize_callback' => 'sanitize_hex_color',
+
+  Kirki::add_field( 'colors_post_share', array(
+    'type'        => 'multicolor',
+    'settings'    => 'colors_post_share',
+    'label'       => esc_attr__( 'Post Share Count', 'mellany' ),
+    'section'     => 'colors_other',
+    'option_type' => 'option',
+    'priority'    => 100,
+    'choices'     => array(
+        'text'    => esc_attr__( 'Text', 'mellany' ),
+        'text_dark'   => esc_attr__( 'Photo bg', 'mellany' ),
+        'icon'   => esc_attr__( 'Icon', 'mellany' ),
+        'icon_dark'   => esc_attr__( 'Photo bg', 'mellany' ),
+    ),
+    'default'     => array(
+        'text'    => '',
+        'text_dark'    => '',
+        'icon'    => '',
+        'icon_dark'    => '',
+    ),
   ));
-  $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'newspaper2017_theme_options[colors_footer_border]', array(
-      'label'    => esc_html__('Footer Border', 'newspaper2017'),
-      'section'  => 'colors_footer',
-      'settings' => 'newspaper2017_theme_options[colors_footer_border]',
-  )));
-
-  $wp_customize->add_setting('newspaper2017_theme_options[colors_footer_bottom_background]', array(
-      'capability'        => 'edit_theme_options',
-      'type'           => 'option',
-      'sanitize_callback' => 'sanitize_hex_color',
+  Kirki::add_field( 'colors_post_view', array(
+    'type'        => 'multicolor',
+    'settings'    => 'colors_post_view',
+    'label'       => esc_attr__( 'Post View Count', 'mellany' ),
+    'section'     => 'colors_other',
+    'option_type' => 'option',
+    'priority'    => 100,
+    'choices'     => array(
+        'text'    => esc_attr__( 'Text', 'mellany' ),
+        'text_dark'   => esc_attr__( 'Photo bg', 'mellany' ),
+        'icon'   => esc_attr__( 'Icon', 'mellany' ),
+        'icon_dark'   => esc_attr__( 'Photo bg', 'mellany' ),
+    ),
+    'default'     => array(
+        'text'    => '',
+        'text_dark'    => '',
+        'icon'    => '',
+        'icon_dark'    => '',
+    ),
   ));
-  $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'newspaper2017_theme_options[colors_footer_bottom_background]', array(
-      'label'    => esc_html__('Bottom Footer Background', 'newspaper2017'),
-      'section'  => 'colors_footer',
-      'settings' => 'newspaper2017_theme_options[colors_footer_bottom_background]',
-  )));
 
-  $wp_customize->add_setting('newspaper2017_theme_options[colors_footer_bottom_text]', array(
-      'capability'        => 'edit_theme_options',
-      'type'           => 'option',
-      'sanitize_callback' => 'sanitize_hex_color',
+  Kirki::add_field( 'mt_colors_cat', array(
+    'type'        => 'multicolor',
+    'settings'    => 'mt_colors_cat',
+    'label'       => esc_attr__( 'Post List Category', 'mellany' ),
+    'section'     => 'colors_other',
+    'option_type' => 'option',
+    'priority'    => 100,
+    'choices'     => array(
+        'text'    => esc_attr__( 'Text', 'mellany' ),
+        'background'   => esc_attr__( 'Background', 'mellany' ),
+        'only_text'   => esc_attr__( 'Only Text', 'mellany' ),
+    ),
+    'default'     => array(
+        'text'    => '',
+        'background'    => '',
+        'only_text'    => '',
+    ),
   ));
-  $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'newspaper2017_theme_options[colors_footer_bottom_text]', array(
-      'label'    => esc_html__('Bottom Footer Text', 'newspaper2017'),
-      'section'  => 'colors_footer',
-      'settings' => 'newspaper2017_theme_options[colors_footer_bottom_text]',
-  )));
-
-  $wp_customize->add_setting('newspaper2017_theme_options[colors_footer_bottom_link]', array(
-      'capability'        => 'edit_theme_options',
-      'type'           => 'option',
-      'sanitize_callback' => 'sanitize_hex_color',
-  ));
-  $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'newspaper2017_theme_options[colors_footer_bottom_link]', array(
-      'label'    => esc_html__('Bottom Footer Link', 'newspaper2017'),
-      'section'  => 'colors_footer',
-      'settings' => 'newspaper2017_theme_options[colors_footer_bottom_link]',
-  )));
-
-  $wp_customize->add_setting('newspaper2017_theme_options[colors_footer_bottom_link_hover]', array(
-      'capability'        => 'edit_theme_options',
-      'type'           => 'option',
-      'sanitize_callback' => 'sanitize_hex_color',
-  ));
-  $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'newspaper2017_theme_options[colors_footer_bottom_link_hover]', array(
-      'label'    => esc_html__('Bottom Footer Link Hover', 'newspaper2017'),
-      'section'  => 'colors_footer',
-      'settings' => 'newspaper2017_theme_options[colors_footer_bottom_link_hover]',
-  )));
-
-  $wp_customize->add_setting('newspaper2017_theme_options[colors_footer_social_icon]', array(
-      'capability'        => 'edit_theme_options',
-      'type'           => 'option',
-      'sanitize_callback' => 'sanitize_hex_color',
-  ));
-  $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'newspaper2017_theme_options[colors_footer_social_icon]', array(
-      'label'    => esc_html__('Social Icon', 'newspaper2017'),
-      'section'  => 'colors_footer',
-      'settings' => 'newspaper2017_theme_options[colors_footer_social_icon]',
-  )));
-
-  $wp_customize->add_setting('newspaper2017_theme_options[colors_footer_social_background]', array(
-      'capability'        => 'edit_theme_options',
-      'type'           => 'option',
-      'sanitize_callback' => 'sanitize_hex_color',
-  ));
-  $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'newspaper2017_theme_options[colors_footer_social_background]', array(
-      'label'    => esc_html__('Social Icon Background', 'newspaper2017'),
-      'section'  => 'colors_footer',
-      'settings' => 'newspaper2017_theme_options[colors_footer_social_background]',
-  )));
-
-  $wp_customize->add_setting('newspaper2017_theme_options[colors_footer_social_icon_hover]', array(
-      'capability'        => 'edit_theme_options',
-      'type'           => 'option',
-      'sanitize_callback' => 'sanitize_hex_color',
-  ));
-  $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'newspaper2017_theme_options[colors_footer_social_icon_hover]', array(
-      'label'    => esc_html__('Social Icon Hover', 'newspaper2017'),
-      'section'  => 'colors_footer',
-      'settings' => 'newspaper2017_theme_options[colors_footer_social_icon_hover]',
-  )));
-
-  $wp_customize->add_setting('newspaper2017_theme_options[colors_footer_social_background_hover]', array(
-      'capability'        => 'edit_theme_options',
-      'type'           => 'option',
-      'sanitize_callback' => 'sanitize_hex_color',
-  ));
-  $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'newspaper2017_theme_options[colors_footer_social_background_hover]', array(
-      'label'    => esc_html__('Social Icon Hover Background', 'newspaper2017'),
-      'section'  => 'colors_footer',
-      'settings' => 'newspaper2017_theme_options[colors_footer_social_background_hover]',
-  )));
-
 
 
 
 
 }
 
-add_action('customize_register', 'newspaper2017_customize_colors');
+add_action('customize_register', 'mellany_customize_colors');
 ?>

@@ -42,6 +42,14 @@ function hasScrolled() {
 jQuery(document).ready(function() {
   'use strict';
 
+  jQuery(".df-megamenu-nav-sub li a").on("hover", function() {
+    var tab_mega = jQuery(this).data( "target" );
+    jQuery(this).parent().parent().parent().parent().children(".df-container-tab-content").children(".tab-content").children(".tab-pane").removeClass("in");
+    jQuery(this).parent().parent().children("li").removeClass("active");
+    jQuery(tab_mega).addClass("in");
+    jQuery(this).parent().addClass("active");
+  });
+
   jQuery( '.single-content .entry-content a[href$=".gif"], .single-content .entry-content a[href$=".jpg"], .single-content .entry-content a[href$=".png"]' ).addClass( 'lightbox' );
 
   jQuery('.mt-slide-1-img, .mt-slide-1-img-left, .mt-slide-1-img-right, .mt-head').addClass("show");
@@ -168,7 +176,7 @@ jQuery(document).ready(function() {
       return num > 999 ? (num/1000).toFixed(1) + 'k' : num;
     }
 
-  
+
      jQuery('.single-content .entry-content > p:first-child').html(function (i, html){
           return html.replace(/^[^a-zA-Z]*([a-zA-Z])/g, '<span class="mt-first-letter">$1</span>');
      });

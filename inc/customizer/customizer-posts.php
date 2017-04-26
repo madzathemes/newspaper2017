@@ -4,8 +4,9 @@ function newspaper2017_customize_posts($wp_customize){
 
 
   $wp_customize->add_section('posts_default_settings', array(
-    'title'    	=> esc_html__('Posts', 'newspaper2017'),
+    'title'    	=> esc_html__('Post Layouts', 'mellany'),
     'priority'       => 301,
+    'panel'  => 'magazin_posts'
   ));
 
   Kirki::add_field( 'newspaper2017_theme_options[post_carousel]', array(
