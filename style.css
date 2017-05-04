@@ -2804,8 +2804,11 @@ background-color: rgba(0,0,0,.6);
   margin-top: 6px;
   display: block;
 }
+.post-statistic {
+  padding: 0 0 0 20px;
+}
 .stat-shares {
-  padding: 12px 10px 10px 40px;
+  padding: 12px 10px 10px 20px;
   font-size: 18px;
   display: inline-block;
 }
@@ -2818,7 +2821,7 @@ background-color: rgba(0,0,0,.6);
     margin-left: -20px;
 }
 .stat-views {
-  padding: 12px 10px 10px 15px;
+  padding: 12px 10px 10px 20px;
   font-size: 18px;
   display: inline-block;
   color: #ff0036
@@ -4975,4 +4978,11 @@ img.mfp-img {
 }
 .tab-pane .mega-post-wrap {
   padding-bottom: 0px;
+}
+
+/* Ie Fix */
+@media screen and (min-width:0\0) {
+  .fixed-top {
+    display: none!important
+  }
 }
