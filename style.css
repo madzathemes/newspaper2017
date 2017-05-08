@@ -4634,9 +4634,6 @@ img.mfp-img {
       z-index: -2;
     }
 
-    .mt-post-image-background {
-      height: 370px;
-    }
     .mt-cool-slider-carousel-back .slick-list {
       overflow: inherit!important;
       height: 100%;
