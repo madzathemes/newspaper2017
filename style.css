@@ -2030,7 +2030,7 @@ h2.heading::before {
 
 /* Post Carousel */
 .post-carousel {
-  padding-left: 4px;
+  padding-left: 48px;
   display: none;
   width: 100%;
   -webkit-tap-highlight-color: transparent;
@@ -2045,35 +2045,44 @@ h2.heading::before {
 }
 .poster-next,
 .poster-prev{
-    padding: 9px 10px 6px;
-    float: left;
-    background: #222;
-    color: white;
-    z-index: 2;
-    cursor: pointer;
-    font-size: 12px;
+  width: 40px;
+  height: 50%;
+  float: left;
+  background: #373e59;
+  color: white;
+  z-index: 2;
+  cursor: pointer;
+  font-size: 12px;
 }
 .poster-next:hover,
 .poster-prev:hover {
   background: #ff0036;
 }
 .poster-next {
-  right: 0;
+  padding: 7px 20px 4px 8px;
+  left: 4px;
   position: absolute;
-  bottom: 100%;
-  margin-bottom: -30px;
+  bottom: 0;
+}
+.poster-prev:before,
+.poster-next:before {
+  font-family: "madza";
+  top: 50%;
+  left: 50%;
+  margin-left: -6px;
+  margin-top: -6px;
+  position: absolute;
 }
 .poster-next:before {
   content: "\62";
-  font-family: "madza";
 }
 .poster-prev {
-  left: 10px;
+  left: 4px;
+  top: 0px;
   position: absolute;
 }
 .poster-prev:before {
   content: "\61";
-  font-family: "madza";
 }
 
 /* Slider */
