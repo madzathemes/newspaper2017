@@ -1181,7 +1181,7 @@ ul.sf-menu ul li a:hover, div.sf-menu ul ul li a:hover {
 .nav-button:hover::before,
 .nav-button.active,
 .nav-button.active::before {
-  background: #efefef;
+  background: #ff0036;
 }
 
 .mt-m-left .mt-m-cool-button-line { margin-left:8px; }
@@ -3136,7 +3136,7 @@ background-color: rgba(0,0,0,.6);
   position: relative;
 }
 .footer-top p{
-  color: #aeaeae;
+  color: #222;
   font-size: 14px;
   display: inline-block;
 }
@@ -3151,7 +3151,7 @@ background-color: rgba(0,0,0,.6);
   border-top: 1px solid #ff0036;
 }
 .footer-bottom p{
-  color: #aeaeae;
+  color: #222;
   font-size: 13px;
   line-height: 1;
   display: inline-block;
