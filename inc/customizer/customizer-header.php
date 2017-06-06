@@ -113,7 +113,7 @@ function newspaper2017_customize_header($wp_customize){
     'option_type' => 'option',
     'choices'     => array(
       'min'  => 20,
-      'max'  => 500,
+      'max'  => 800,
       'step' => 1,
     ),
   ) );
@@ -131,7 +131,7 @@ function newspaper2017_customize_header($wp_customize){
     'option_type' => 'option',
     'choices'     => array(
       'min'  => 20,
-      'max'  => 200,
+      'max'  => 800,
       'step' => 1,
     ),
   ) );
@@ -150,7 +150,7 @@ function newspaper2017_customize_header($wp_customize){
     'option_type' => 'option',
   	'choices'     => array(
   		'min'  => 0,
-  		'max'  => 120,
+  		'max'  => 300,
   		'step' => 1,
   	),
   ) );
@@ -167,7 +167,7 @@ function newspaper2017_customize_header($wp_customize){
     'option_type' => 'option',
   	'choices'     => array(
   		'min'  => 0,
-  		'max'  => 120,
+  		'max'  => 300,
   		'step' => 1,
   	),
   ) );

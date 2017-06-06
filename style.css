@@ -1,6 +1,6 @@
 @charset "utf-8";
 /*-----------------------------------------------------------------------------------
-  	Version: 1.1
+  	Version: 1.3
     Theme Name: NewsPaper2017
     Theme URI: https://themeforest.net/item/newspaper2017-wordpress-theme-for-blog-magazine-newspaper/19695885
     Description: Magazin / Blog
@@ -29,9 +29,6 @@
 
 .panel-grid {
   margin-bottom: 0px;
-}
-#wp-admin-bar-so_live_editor {
-  display: none;
 }
 html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%; }body{margin:0}article,aside,details,/* 1 */
 figcaption,figure,footer,header,main,/* 2 */
@@ -1579,39 +1576,38 @@ h2.heading::before {
 .social-text {
   float: right;
 }
-.social-facebook {
-  background: #2d5f9a;
+.social-facebook { background: #2d5f9a; }
+.social-facebook:before { content: "\77"; }
+.social-twitter { background: #2ecff8; }
+.social-twitter:before { content: "\6c"; }
+.social-youtube { background: #b6b6b7; }
+.social-youtube:before { content: "\69"; }
+
+.social-github { background: #6e5494; }
+.social-github:before { content: "\e910"; }
+.social-googleplus { background: #d34836; }
+.social-googleplus:before { content: "\72"; }
+.social-instagram {
+  background: #bc2a8d;
+  background: -webkit-radial-gradient(32% 106%, circle cover, rgb(255, 225, 125) 0%, rgb(255, 205, 105) 10%, rgb(250, 145, 55) 28%, rgb(235, 65, 65) 42%, transparent 82%), -webkit-linear-gradient(-45deg, rgb(35, 75, 215) 12%, rgb(195, 60, 190) 58%);
+	background: -moz-radial-gradient(32% 106%, circle cover, rgb(255, 225, 125) 0%, rgb(255, 205, 105) 10%, rgb(250, 145, 55) 28%, rgb(235, 65, 65) 42%, transparent 82%), -moz-linear-gradient(-45deg, rgb(35, 75, 215) 12%, rgb(195, 60, 190) 58%);
+	background: radial-gradient(circle farthest-corner at 32% 106%, rgb(255, 225, 125) 0%, rgb(255, 205, 105) 10%, rgb(250, 145, 55) 28%, rgb(235, 65, 65) 42%, transparent 82%), linear-gradient(135deg, rgb(35, 75, 215) 12%, rgb(195, 60, 190) 58%);
 }
-.social-facebook:before {
-  content: "\77";
-  font-family: "madza";
-  padding-right: 10px;
-  margin-right: 10px;
-  font-size: 18px;
-  border-right: 1px solid rgba(255, 255, 255, 0.3);
-}
-.social-twitter {
-  background: #2ecff8;
-}
-.social-twitter:before {
-  content: "\6c";
-  font-family: "madza";
-  padding-right: 10px;
-  margin-right: 10px;
-  font-size: 18px;
-  border-right: 1px solid rgba(255, 255, 255, 0.3);
-}
-.social-subscribe {
-  background: #bebfc5;
-}
-.social-subscribe:before {
-  content: "\69";
-  font-family: "madza";
-  padding-right: 10px;
-  margin-right: 10px;
-  font-size: 18px;
-  border-right: 1px solid rgba(255, 255, 255, 0.3);
-}
+.social-instagram:before { content: "\6d"; }
+.social-linkedin { background: #0077B5; }
+.social-linkedin:before { content: "\71"; }
+.social-pinterest { background: #cb2027; }
+.social-pinterest:before { content: "\70"; }
+.social-soundcloud { background: #f50; }
+.social-soundcloud:before { content: "\e912"; }
+.social-steam { background: #666666; }
+.social-steam:before { content: "\e90f"; }
+.social-tumblr { background: #32506d; }
+.social-tumblr:before { content: "\e90e"; }
+.social-twitch { background: #6441a5; }
+.social-twitch:before { content: "\e90c"; }
+.social-vimeo { background: #aad450; }
+.social-vimeo:before { content: "\4f"; }
 .socials a:after {
     content: " ";
     width: 0%;
