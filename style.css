@@ -1565,6 +1565,9 @@ h2.heading::before {
   color: white;
   position: relative;
 }
+.socials a:before {
+    font-family: "madza";
+}
 .socials a span,
 .socials a:before {
   position: relative;
