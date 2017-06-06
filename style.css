@@ -1566,7 +1566,12 @@ h2.heading::before {
   position: relative;
 }
 .socials a:before {
-    font-family: "madza";
+  font-family: "madza";
+  padding-right: 10px;
+  margin-right: 10px;
+  font-size: 18px;
+  border-right: 1px solid rgba(255,255,255,.3);
+  top: 2px;
 }
 .socials a span,
 .socials a:before {
