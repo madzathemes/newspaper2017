@@ -2068,6 +2068,9 @@ h2.heading::before {
   position: absolute;
   bottom: 0;
 }
+.boxed-layout-on .poster-next {
+  left: 0px;
+}
 .poster-prev:before,
 .poster-next:before {
   font-family: "madza";
