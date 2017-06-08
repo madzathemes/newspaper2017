@@ -571,6 +571,20 @@ function newspaper2017_customize_header($wp_customize){
       ),
       ));
 
+  Kirki::add_field( 'newspaper2017_theme_options[menu_background_width]', array(
+  	'type'        => 'radio-buttonset',
+  	'settings'    => 'newspaper2017_theme_options[menu_background_width]',
+  	'label'       => esc_html__( 'Menu Style', 'newspaper2017' ),
+  	'section'     => 'newspaper2017_header_top',
+  	'default'     => 'boxed',
+  	'priority'    => 1,
+    'option_type'           => 'option',
+  	'choices'     => array(
+  		'boxed'   => esc_attr__( 'Boxed', 'newspaper2017' ),
+  		'full' => esc_attr__( 'Full Width', 'newspaper2017' ),
+  	),
+  ));
+
 		// Latest Posts
 		$wp_customize->add_setting('newspaper2017_theme_options[url_latest]', array(
 			'capability' => 'edit_theme_options',
