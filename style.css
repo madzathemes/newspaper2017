@@ -1,6 +1,6 @@
 @charset "utf-8";
 /*-----------------------------------------------------------------------------------
-  	Version: 1.3
+  	Version: 1.4
     Theme Name: NewsPaper2017
     Theme URI: https://themeforest.net/item/newspaper2017-wordpress-theme-for-blog-magazine-newspaper/19695885
     Description: Magazin / Blog
@@ -4889,6 +4889,8 @@ img.mfp-img {
 }
 
 /* Remove Class */
+.remove-pl-share .poster-shares,
+.remove-pl-view .poster-views,
 .remove-pl-author .mt-pl-a,
 .remove-pl-author .mt-ml,
 .remove-pl-date .mt-pl-d,

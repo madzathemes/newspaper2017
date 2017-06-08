@@ -10,7 +10,7 @@
 
     <?php if  (!empty($optionz['sidebar_ad_top'])) {  ?>
       <div class="advertise text-center">
-        <?php echo html_entity_decode($optionz['sidebar_ad_top']); ?>
+        <?php echo do_shortcode(html_entity_decode($optionz['sidebar_ad_top'])); ?>
       </div>
     <?php } ?>
 
@@ -19,7 +19,7 @@
       <?php echo do_shortcode('[posts type=normal offset="3" item_nr=3]') ?>
       <?php if  (!empty($optionz['sidebar_ad_middle'])) {  ?>
         <div class="advertise text-center">
-          <?php echo html_entity_decode($optionz['sidebar_ad_middle']); ?>
+          <?php echo do_shortcode(html_entity_decode($optionz['sidebar_ad_middle'])); ?>
         </div>
       <?php } ?>
     <?php } ?>
@@ -31,7 +31,7 @@
       <?php echo do_shortcode('[subscribe]') ?>
       <?php if  (!empty($optionz['sidebar_ad_bottom'])) {  ?>
         <div class="advertise text-center">
-          <?php echo html_entity_decode($optionz['sidebar_ad_bottom']); ?>
+          <?php echo do_shortcode(html_entity_decode($optionz['sidebar_ad_bottom'])); ?>
         </div>
       <?php } ?>
     <?php } ?>
