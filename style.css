@@ -1,6 +1,6 @@
 @charset "utf-8";
 /*-----------------------------------------------------------------------------------
-  	Version: 1.4
+  	Version: 1.5
     Theme Name: NewsPaper2017
     Theme URI: https://themeforest.net/item/newspaper2017-wordpress-theme-for-blog-magazine-newspaper/19695885
     Description: Magazin / Blog
@@ -3672,6 +3672,10 @@ background-color: rgba(0,0,0,.6);
   }
   .poster-prev {
     left: 0;
+  }
+  .poster-prev,
+  .poster-next {
+    display: none!important;
   }
 }
 @media all and (max-width: 545px) {
