@@ -39,7 +39,7 @@ $url = wp_get_attachment_url( get_post_thumbnail_id(get_the_ID()));
       </div>
       <div class="author-info">
         <strong><?php the_author_posts_link(); ?></strong>
-        <small><?php echo get_the_date(); ?></small>
+        <small class="color-silver-light"><?php echo get_the_date(); ?></small>
       </div>
     </div>
     <?php if ( false == get_theme_mod( 't_p_shares', false ) ) { $t_p_shares = esc_html__("Shares", "newspaper2017");  } else { $t_p_shares = get_theme_mod( 't_p_shares' ); } ?>
@@ -48,7 +48,7 @@ $url = wp_get_attachment_url( get_post_thumbnail_id(get_the_ID()));
     <?php if ( false == get_theme_mod( 't_p_share_on_twitter', false ) ) { $t_p_share_on_twitter = esc_html__("Tweet on Twitter", "newspaper2017");  } else { $t_p_share_on_twitter = get_theme_mod( 't_p_share_on_twitter' ); } ?>
     <?php if ( false == get_theme_mod( 't_c_comments', false ) ) { $t_c_comments = esc_html__("Comments", "newspaper2017");  } else { $t_c_comments = get_theme_mod( 't_c_comments' ); } ?>
     <?php if(function_exists('magazin_theme_setup')) { ?>
-    <div class="post-statistic">
+    <div class="post-statistic pull-left">
       <?php if(!empty($shares)){ ?><span class="stat-shares color-silver-light"><strong><?php echo esc_attr($shares); ?></strong> <?php echo esc_html($t_p_shares); ?></span><?php } ?>
       <?php if(!empty($viewes)){ ?><span class="stat-views"><strong><?php echo esc_attr($viewes) ?></strong> <?php echo esc_html($t_p_views); ?></span><?php } ?>
       <?php if (get_comments_number()!="0") { ?><span class="stat-comments color-silver-light"><?php echo get_comments_number(); ?></span><?php } ?>
