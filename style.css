@@ -2473,9 +2473,6 @@ background-color: rgba(0,0,0,.6);
   font-size: 11px;
   background: rgb(27, 27, 27);
 }
-.single-media-title .color-silver-light {
-  color: white;
-}
 .single-image-gradient:before {
     bottom: 0;
     content: "";
