@@ -120,8 +120,8 @@ function newspaper2017_top_content() { $option = get_option("newspaper2017_theme
 			if ( false == get_theme_mod( 't_pl_posts', false ) ) { $t_posts = esc_html__("Posts", "newspaper2017");  } else { $t_posts = get_theme_mod( 't_pl_posts' ); }
 			if ( false == get_theme_mod( 't_pl_latest', false ) ) { $t_latest = esc_html__("Latest", "newspaper2017");  } else { $t_latest = get_theme_mod( 't_pl_latest' ); }
 			?>
-			<?php if(!empty($option['url_latest'])) { ?><a <?php if($option['url_latest']==get_the_ID()) { ?>class="active"<?php } ?> href="<?php echo get_permalink(esc_html($option['url_latest'])); ?>"><?php echo esc_html($t_popular); ?> <span><?php echo esc_html($t_posts); ?></span></a><?php } ?>
-			<?php if(!empty($option['url_popular'])) { ?><a <?php if($option['url_popular']==get_the_ID()) { ?>class="active"<?php } ?> href="<?php echo get_permalink(esc_html($option['url_popular'])); ?>"><?php echo esc_html($t_latest); ?> <span><?php echo esc_html($t_posts); ?></span></a><?php } ?>
+			<?php if(!empty($option['url_latest'])) { ?><a <?php if($option['url_latest']==get_the_ID()) { ?>class="active"<?php } ?> href="<?php echo get_permalink(esc_html($option['url_latest'])); ?>"><?php echo esc_html($t_latest); ?> <span><?php echo esc_html($t_posts); ?></span></a><?php } ?>
+			<?php if(!empty($option['url_popular'])) { ?><a <?php if($option['url_popular']==get_the_ID()) { ?>class="active"<?php } ?> href="<?php echo get_permalink(esc_html($option['url_popular'])); ?>"><?php echo esc_html($t_popular); ?> <span><?php echo esc_html($t_posts); ?></span></a><?php } ?>
 			<?php if(!empty($option['url_hot'])) { ?><a <?php if($option['url_hot']==get_the_ID()) { ?>class="active"<?php } ?> href="<?php echo get_permalink(esc_html($option['url_hot'])); ?>"><?php echo esc_html($t_hot); ?> <span><?php echo esc_html($t_posts); ?></span></a><?php } ?>
 			<?php if(!empty($option['url_trending'])) { ?>	<a <?php if($option['url_trending']==get_the_ID()) { ?>class="active"<?php } ?> href="<?php echo get_permalink(esc_html($option['url_trending'])); ?>"><?php echo esc_html($t_trending); ?> <span><?php echo esc_html($t_posts); ?></span></a><?php } ?>
 		</div>
