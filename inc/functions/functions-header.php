@@ -113,10 +113,17 @@ else if(!empty($option['menu_background_width'])) {
 
 function newspaper2017_top_content() { $option = get_option("newspaper2017_theme_options"); ?>
 		<div class="head-nav">
-			<?php if(!empty($option['url_latest'])) { ?><a <?php if($option['url_latest']==get_the_ID()) { ?>class="active"<?php } ?> href="<?php echo get_permalink(esc_html($option['url_latest'])); ?>"><?php esc_html_e( 'LATEST', 'newspaper2017' ); ?> <span><?php esc_html_e( 'Posts', 'newspaper2017' ); ?></span></a><?php } ?>
-			<?php if(!empty($option['url_popular'])) { ?><a <?php if($option['url_popular']==get_the_ID()) { ?>class="active"<?php } ?> href="<?php echo get_permalink(esc_html($option['url_popular'])); ?>"><?php esc_html_e( 'POPULAR', 'newspaper2017' ); ?> <span><?php esc_html_e( 'Posts', 'newspaper2017' ); ?></span></a><?php } ?>
-			<?php if(!empty($option['url_hot'])) { ?><a <?php if($option['url_hot']==get_the_ID()) { ?>class="active"<?php } ?> href="<?php echo get_permalink(esc_html($option['url_hot'])); ?>"><?php esc_html_e( 'HOT', 'newspaper2017' ); ?> <span><?php esc_html_e( 'Posts', 'newspaper2017' ); ?></span></a><?php } ?>
-			<?php if(!empty($option['url_trending'])) { ?>	<a <?php if($option['url_trending']==get_the_ID()) { ?>class="active"<?php } ?> href="<?php echo get_permalink(esc_html($option['url_trending'])); ?>"><?php esc_html_e( 'TRENDING', 'newspaper2017' ); ?> <span><?php esc_html_e( 'Posts', 'newspaper2017' ); ?></span></a><?php } ?>
+			<?php
+			if ( false == get_theme_mod( 't_pl_popular', false ) ) { $t_popular = esc_html__("Popular", "newspaper2017");  } else { $t_popular = get_theme_mod( 't_pl_popular' ); }
+			if ( false == get_theme_mod( 't_pl_hot', false ) ) { $t_hot = esc_html__("Hot", "newspaper2017");  } else { $t_hot = get_theme_mod( 't_pl_hot' ); }
+			if ( false == get_theme_mod( 't_pl_trending', false ) ) { $t_trending = esc_html__("Trending", "newspaper2017");  } else { $t_trending = get_theme_mod( 't_pl_trending' ); }
+			if ( false == get_theme_mod( 't_pl_posts', false ) ) { $t_posts = esc_html__("Posts", "newspaper2017");  } else { $t_posts = get_theme_mod( 't_pl_posts' ); }
+			if ( false == get_theme_mod( 't_pl_latest', false ) ) { $t_latest = esc_html__("Latest", "newspaper2017");  } else { $t_latest = get_theme_mod( 't_pl_latest' ); }
+			?>
+			<?php if(!empty($option['url_latest'])) { ?><a <?php if($option['url_latest']==get_the_ID()) { ?>class="active"<?php } ?> href="<?php echo get_permalink(esc_html($option['url_latest'])); ?>"><?php echo esc_html($t_popular); ?> <span><?php echo esc_html($t_posts); ?></span></a><?php } ?>
+			<?php if(!empty($option['url_popular'])) { ?><a <?php if($option['url_popular']==get_the_ID()) { ?>class="active"<?php } ?> href="<?php echo get_permalink(esc_html($option['url_popular'])); ?>"><?php echo esc_html($t_latest); ?> <span><?php echo esc_html($t_posts); ?></span></a><?php } ?>
+			<?php if(!empty($option['url_hot'])) { ?><a <?php if($option['url_hot']==get_the_ID()) { ?>class="active"<?php } ?> href="<?php echo get_permalink(esc_html($option['url_hot'])); ?>"><?php echo esc_html($t_hot); ?> <span><?php echo esc_html($t_posts); ?></span></a><?php } ?>
+			<?php if(!empty($option['url_trending'])) { ?>	<a <?php if($option['url_trending']==get_the_ID()) { ?>class="active"<?php } ?> href="<?php echo get_permalink(esc_html($option['url_trending'])); ?>"><?php echo esc_html($t_trending); ?> <span><?php echo esc_html($t_posts); ?></span></a><?php } ?>
 		</div>
 
 		<?php if ( true == get_theme_mod( 'mt_header_time', false ) ) {?>
@@ -235,6 +242,8 @@ function newspaper2017_header_fixed() {
 			$viewes = $view;
 		}
 		$url = wp_get_attachment_url( get_post_thumbnail_id(get_the_ID()));
+		if ( false == get_theme_mod( 't_p_share_post', false ) ) { $t_p_share_post = esc_html__("Share Post", "newspaper2017");  } else { $t_p_share_post = get_theme_mod( 't_p_share_post' ); }
+		if ( false == get_theme_mod( 't_p_share_on_twitter', false ) ) { $t_p_share_on_twitter = esc_html__("Tweet on Twitter", "newspaper2017");  } else { $t_p_share_on_twitter = get_theme_mod( 't_p_share_on_twitter' ); }
 		?>
 		<?php $option = get_option("newspaper2017_theme_options"); ?>
 				<div class="fixed-top">
@@ -243,9 +252,9 @@ function newspaper2017_header_fixed() {
 							<div class="col-md-12">
 
 								<ul class="share">
-									<li class="share-facebook"><a href="http://www.facebook.com/sharer.php?u=<?php the_permalink();?>" target="_blank"><span><?php echo esc_html__('Share on Facebook', 'newspaper2017'); ?></span></a></li>
+									<li class="share-facebook"><a href="http://www.facebook.com/sharer.php?u=<?php the_permalink();?>" target="_blank"><span><?php echo esc_html($t_p_share_post); ?></span></a></li>
 									<?php $input = get_the_title().' '.get_the_permalink(); $title = str_replace( ' ', '+', $input ); ?>
-									<li class="share-twitter"><a href="http://twitter.com/home/?status=<?php echo esc_attr($title); ?>" target="_blank"><span><?php echo esc_html__('Share on Twitter', 'newspaper2017'); ?></span></a></li>
+									<li class="share-twitter"><a href="http://twitter.com/home/?status=<?php echo esc_attr($title); ?>" target="_blank"><span><?php echo esc_html($t_p_share_on_twitter); ?></span></a></li>
 									<li class="share-more">
 										<div class="share-more-wrap"><div class="share-more-icon">+</div></div>
 										<a href="https://plus.google.com/share?url=<?php the_permalink() ?>" target="_blank"><div class="google"></div></a>

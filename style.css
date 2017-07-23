@@ -1,6 +1,6 @@
 @charset "utf-8";
 /*-----------------------------------------------------------------------------------
-  	Version: 1.6
+  	Version: 1.9
     Theme Name: NewsPaper2017
     Theme URI: https://themeforest.net/item/newspaper2017-wordpress-theme-for-blog-magazine-newspaper/19695885
     Description: Magazin / Blog
@@ -988,6 +988,7 @@ ul.sf-menu ul li a:hover, div.sf-menu ul ul li a:hover {
   margin: 0px 10px;
   padding: 5px 0px;
   display: inline-block;
+  text-transform: uppercase;
 }
 .head-nav a:hover,
 .head-nav a.active {
@@ -997,6 +998,7 @@ ul.sf-menu ul li a:hover, div.sf-menu ul ul li a:hover {
   color: #9d9da1;
   font-weight:400;
   font-size: 13px;
+  text-transform: inherit;
 }
 
 /* HEAD TIME */
