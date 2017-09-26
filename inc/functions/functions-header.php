@@ -228,47 +228,51 @@ function newspaper2017_socials() { ?>
 
 function newspaper2017_header_fixed() {
 	if (is_single()) {
-		/* Share Meta from Magazin framework */
-		$share = get_post_meta(get_the_ID(), "magazin_share_count", true);
-		$share_real = get_post_meta(get_the_ID(), "magazin_share_count_real", true);
-		$shares = $share_real;
-		if (!empty($share)){
-			$shares = $share+$share_real;
-		}
-		/* View Meta from Magazin framework */
-		$view = get_post_meta(get_the_ID(), "magazin_view_count", true);
-		$viewes = "0";
-		if (!empty($view)){
-			$viewes = $view;
-		}
-		$url = wp_get_attachment_url( get_post_thumbnail_id(get_the_ID()));
-		if ( false == get_theme_mod( 't_p_share_post', false ) ) { $t_p_share_post = esc_html__("Share Post", "newspaper2017");  } else { $t_p_share_post = get_theme_mod( 't_p_share_post' ); }
-		if ( false == get_theme_mod( 't_p_share_on_twitter', false ) ) { $t_p_share_on_twitter = esc_html__("Tweet on Twitter", "newspaper2017");  } else { $t_p_share_on_twitter = get_theme_mod( 't_p_share_on_twitter' ); }
-		?>
-		<?php $option = get_option("newspaper2017_theme_options"); ?>
-				<div class="fixed-top">
-					<div class="container">
-						<div class="row">
-							<div class="col-md-12">
+			/* Share Meta from Magazin framework */
+			$share = get_post_meta(get_the_ID(), "magazin_share_count", true);
+			$share_real = get_post_meta(get_the_ID(), "magazin_share_count_real", true);
+			$shares = $share_real;
+			if (!empty($share)){
+				$shares = $share+$share_real;
+			}
+			/* View Meta from Magazin framework */
+			$view = get_post_meta(get_the_ID(), "magazin_view_count", true);
+			$viewes = "0";
+			if (!empty($view)){
+				$viewes = $view;
+			}
+			$url = wp_get_attachment_url( get_post_thumbnail_id(get_the_ID()));
+			if ( false == get_theme_mod( 't_p_share_on_facebook', false ) ) { $t_p_share_on_facebook = esc_html__("Share on Facebook", "techpro");  } else { $t_p_share_on_facebook = get_theme_mod( 't_p_share_on_facebook' ); }
+			if ( false == get_theme_mod( 't_p_share_on_twitter', false ) ) { $t_p_share_on_twitter = esc_html__("Tweet on Twitter", "techpro");  } else { $t_p_share_on_twitter = get_theme_mod( 't_p_share_on_twitter' ); }
 
-								<ul class="share">
-									<li class="share-facebook"><a href="http://www.facebook.com/sharer.php?u=<?php the_permalink();?>" target="_blank"><span><?php echo esc_html($t_p_share_post); ?></span></a></li>
-									<?php $input = get_the_title().' '.get_the_permalink(); $title = str_replace( ' ', '+', $input ); ?>
-									<li class="share-twitter"><a href="http://twitter.com/home/?status=<?php echo esc_attr($title); ?>" target="_blank"><span><?php echo esc_html($t_p_share_on_twitter); ?></span></a></li>
-									<li class="share-more">
-										<div class="share-more-wrap"><div class="share-more-icon">+</div></div>
-										<a href="https://plus.google.com/share?url=<?php the_permalink() ?>" target="_blank"><div class="google"></div></a>
-										<a href="http://pinterest.com/pin/create/button/?url=<?php the_permalink() ?>&media=<?php echo esc_url($url); ?>" target="_blank"><div class="pinterest"></div></a>
-									</li>
-								</ul>
-								<span class="top-count stat-shares"><?php echo esc_attr($shares); ?> <?php esc_html_e('Shares', 'newspaper2017'); ?></span>
-								<span class="top-count stat-views"><?php if(function_exists('magazin_PostViews')){   echo esc_attr($viewes) + magazin_PostViews(get_the_ID()); } ?> Views</span>
-								<?php if (get_comments_number()!="0") { ?><span class="stat-comments top-count"><?php echo get_comments_number(); ?> Comments</span><?php } ?>
+			if ( false == get_theme_mod( 't_p_shares', false ) ) { $t_p_share_t = esc_html__("Shares", "techpro");  } else { $t_p_share_t = get_theme_mod( 't_p_shares' ); }
+			if ( false == get_theme_mod( 't_p_views', false ) ) { $t_p_views_t = esc_html__("Views", "techpro");  } else { $t_p_views_t = get_theme_mod( 't_p_views' ); }
+			if ( false == get_theme_mod( 'mt_translate_comments', false ) ) { $t_p_comments_t = esc_html__("Comments", "techpro");  } else { $t_p_comments_t = get_theme_mod( 'mt_translate_comments' ); }
+			?>
+			<?php $option = get_option("rimi_theme_options"); ?>
+					<div class="fixed-top">
+						<div class="container">
+							<div class="row">
+								<div class="col-md-12">
+
+									<ul class="share">
+										<li class="share-facebook"><a href="http://www.facebook.com/sharer.php?u=<?php the_permalink();?>" target="_blank"><span><?php echo esc_html($t_p_share_on_facebook); ?></span></a></li>
+										<?php $input = get_the_title().' '.get_the_permalink(); $title = str_replace( ' ', '+', $input ); ?>
+										<li class="share-twitter"><a href="http://twitter.com/home/?status=<?php echo esc_attr($title); ?>" target="_blank"><span><?php echo esc_html($t_p_share_on_twitter); ?></span></a></li>
+										<li class="share-more">
+											<div class="share-more-wrap"><div class="share-more-icon">+</div></div>
+											<a href="https://plus.google.com/share?url=<?php the_permalink() ?>" target="_blank"><div class="google"></div></a>
+											<a href="http://pinterest.com/pin/create/button/?url=<?php the_permalink() ?>&media=<?php echo esc_url($url); ?>" target="_blank"><div class="pinterest"></div></a>
+										</li>
+									</ul>
+									<span class="top-count stat-shares"><?php echo esc_attr($shares); ?> <?php echo esc_html($t_p_share_t); ?></span>
+									<span class="top-count stat-views"><?php if(function_exists('magazin_PostViews')){   echo esc_attr($viewes) + magazin_PostViews(get_the_ID()); } ?> <?php echo esc_html($t_p_views_t); ?></span>
+									<?php if (get_comments_number()!="0") { ?><span class="stat-comments top-count"><?php echo get_comments_number(); ?> <?php echo esc_html($t_p_comments_t); ?></span><?php } ?>
+								</div>
 							</div>
 						</div>
 					</div>
-				</div>
-	<?php } ?>
+		<?php } ?>
 	<div class="fixed-top-menu">
 		<div class="container">
 			<div class="row">
