@@ -326,6 +326,7 @@ function newspaper2017_header_script() {
 		wp_enqueue_style('newspaper2017', get_stylesheet_uri());
 
 		$option = get_option("newspaper2017_theme_options");
+		wp_enqueue_script( 'mt-defer', get_template_directory_uri(). '/inc/js/defer.js', array( 'jquery'),  '1.0', true );
 		if  (!empty($option['menu_top_ad'])) {
 			 if  ($option['menu_top_ad']!="ad") {
 				 if  (!empty($option['weather_type'])) {
